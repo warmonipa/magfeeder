@@ -1,0 +1,16 @@
+{
+  "name": "magfeeder",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/serve_site.mjs . 5173",
+    "preview": "node scripts/serve_site.mjs . 4173",
+    "test": "node scripts/verify_mag_sim_data.mjs && node scripts/verify_mag_sim.mjs && node scripts/verify_mag_sim_planner.mjs",
+    "test:e2e": "playwright test",
+    "release:prepare": "npm test && npm run test:e2e"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.62.0"
+  }
+}

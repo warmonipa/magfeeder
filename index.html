@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="PSOBB 玛古模拟器">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>玛古模拟器 | Ephinea PSOBB</title>
+    <link rel="stylesheet" type="text/css" href="./assets/css/unified-style.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/mag-chart.css">
+    <script src="./assets/js/page-chrome.js"></script>
+    <script src="./assets/js/mag-sim-data.js" defer></script>
+    <script src="./assets/js/mag-evolution.js" defer></script>
+    <script type="module" src="./assets/js/mag-sim-ui.js"></script>
+    <style>
+        .mag-sim__grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .mag-sim__setup,
+        .mag-sim__card,
+        .mag-sim__feed,
+        .mag-sim__log {
+            min-height: 4rem;
+        }
+
+        .mag-sim__controls,
+        .mag-sim__log {
+            grid-column: 1 / -1;
+        }
+
+        .mag-sim__controls {
+            min-height: 0;
+        }
+
+        @media (max-width: 720px) {
+            .mag-sim__grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ---------- setup panel ---------- */
+
+        .mag-sim-setup__block {
+            margin: 0 0 1.25rem;
+            padding: 12px 14px 14px;
+            border: 1px solid var(--card-br);
+            border-radius: 10px;
+        }
+
+        .mag-sim-setup__block legend {
+            padding: 0 6px;
+            font-size: 12.5px;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        .mag-sim-setup__block .mag-tabs {
+            margin: 4px 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .mag-sim-setup__row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-end;
+            gap: 14px;
+            margin-top: 8px;
+        }
+
+        .mag-sim-setup__field {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            font-size: 12.5px;
+            color: var(--text-secondary);
+        }
+
+        /* custom-start Photon Blast picker (up to 3) */
+        .mag-sim-setup__pbs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 10px;
+        }
+
+        .mag-sim-setup__pb {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 8px;
+            font-size: 12px;
+            color: var(--text-secondary);
+            background: var(--card-bg, transparent);
+            border: 1px solid var(--card-br);
+            border-radius: 999px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .mag-sim-setup__pb.is-on {
+            color: var(--text-primary);
+            border-color: var(--accent);
+        }
+
+        .mag-sim-setup__pb input {
+            width: 13px;
+            height: 13px;
+            accent-color: var(--accent);
+            cursor: pointer;
+        }
+
+        .mag-sim-setup__pb em {
+            margin-left: 5px;
+            font-style: normal;
+            font-size: 11px;
+            opacity: .6;
+        }
+
+        .mag-sim-setup__derived {
+            margin-top: 8px;
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .mag-sim-setup__custom {
+            margin-top: 10px;
+        }
+
+        .mag-sim-setup__stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 14px;
+            margin: 10px 0;
+        }
+
+        .mag-sim-setup__stats label {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            font-size: 11.5px;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        .mag-sim-setup__stats input {
+            width: 5.5rem;
+        }
+
+        .mag-sim-setup__label {
+            margin: 10px 0 2px;
+            font-size: 12.5px;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        .mag-sim-setup__block select,
+        .mag-sim-setup__block input[type="number"] {
+            padding: 6px 9px;
+            font: inherit;
+            font-size: 13px;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            border: 1px solid var(--card-br);
+            border-radius: 6px;
+        }
+
+        .mag-sim-setup__block select:focus,
+        .mag-sim-setup__block input[type="number"]:focus {
+            outline: 2px solid var(--accent);
+            outline-offset: 1px;
+        }
+
+        .mag-sim-setup__apply {
+            padding: 7px 16px;
+            font: inherit;
+            font-size: 12.5px;
+            font-weight: 600;
+            color: var(--accent);
+            background: var(--accent-10);
+            border: 1px solid var(--accent-20);
+            border-radius: 18px;
+            cursor: pointer;
+            transition: color .2s ease, background .2s ease, border-color .2s ease;
+        }
+
+        .mag-sim-setup__apply:hover {
+            color: var(--accent-dark);
+            background: var(--accent);
+        }
+
+        .mag-id-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 5px 12px 5px 8px;
+            font: inherit;
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            background: var(--accent-5);
+            border: 1px solid var(--accent-20);
+            border-radius: 16px;
+            cursor: pointer;
+            transition: color .2s ease, background .2s ease, border-color .2s ease;
+        }
+
+        .mag-id-chip img {
+            width: 16px;
+            height: 16px;
+            object-fit: contain;
+        }
+
+        .mag-id-chip:hover {
+            color: var(--accent);
+            background: var(--accent-10);
+        }
+
+        .mag-id-chip[aria-selected='true'] {
+            color: var(--accent-dark);
+            background: var(--accent);
+            border-color: var(--accent);
+        }
+
+        .mag-id-chip:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .mag-choice-picker {
+            position: relative;
+            width: max-content;
+        }
+
+        .mag-choice-picker__trigger {
+            text-align: left;
+        }
+
+        .mag-section-picker__trigger {
+            min-width: 9.5rem;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            border-color: var(--card-br);
+            text-align: left;
+        }
+
+        .mag-section-picker__trigger:hover,
+        .mag-section-picker__trigger[aria-expanded='true'] {
+            color: var(--accent);
+            background: var(--bg-primary);
+            border-color: var(--accent);
+        }
+
+        .mag-section-picker .mag-choice-picker__option {
+            background: transparent;
+        }
+
+        .mag-section-picker .mag-choice-picker__option:hover,
+        .mag-section-picker .mag-choice-picker__option[aria-selected='true'] {
+            color: var(--accent);
+            background: transparent;
+            border-color: var(--accent);
+        }
+
+        .mag-choice-picker__chevron {
+            margin-left: auto;
+            font-size: 14px;
+            line-height: 1;
+            transition: transform .15s ease;
+        }
+
+        .mag-choice-picker__trigger[aria-expanded='true'] .mag-choice-picker__chevron {
+            transform: rotate(180deg);
+        }
+
+        .mag-choice-picker__menu {
+            position: fixed;
+            z-index: 100;
+            display: grid;
+            max-height: min(20rem, 60vh);
+            gap: 4px;
+            padding: 8px;
+            overflow-y: auto;
+            background: var(--bg-primary);
+            border: 1px solid var(--card-br);
+            border-radius: 10px;
+            box-shadow: 0 10px 24px rgba(0, 0, 0, .22), 0 2px 6px rgba(0, 0, 0, .18);
+        }
+
+        .mag-choice-picker__menu[hidden] {
+            display: none;
+        }
+
+        .mag-choice-picker__option {
+            width: 100%;
+        }
+
+        .mag-section-picker__menu {
+            width: 11rem;
+        }
+
+        .mag-class-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            width: 10rem;
+            min-height: 34px;
+            padding: 3px 10px 3px 6px;
+            font: inherit;
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            text-align: left;
+            background: var(--bg-primary);
+            border: 1px solid var(--card-br);
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .mag-class-chip img {
+            width: 24px;
+            height: 28px;
+            object-fit: contain;
+            object-position: center bottom;
+        }
+
+        .mag-class-chip:hover,
+        .mag-class-chip[aria-selected='true'] {
+            color: var(--text-primary);
+            background: var(--accent-10);
+            border-color: var(--accent-30);
+        }
+
+        .mag-class-chip:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 1px;
+        }
+
+        .mag-class-picker__menu {
+            width: 11rem;
+        }
+
+        .mag-class-picker__group {
+            display: grid;
+            gap: 3px;
+        }
+
+        .mag-class-picker__group + .mag-class-picker__group {
+            margin-top: 4px;
+            padding-top: 4px;
+            border-top: 1px solid var(--card-br);
+        }
+
+        .mag-class-picker__group-label {
+            padding: 2px 6px;
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            letter-spacing: .04em;
+        }
+
+        .mag-rule-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            width: 10rem;
+            min-height: 34px;
+            padding: 3px 8px;
+            font-size: 12px;
+            color: var(--text-secondary);
+            background: var(--bg-primary);
+            border: 1px solid var(--card-br);
+            border-radius: 8px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .mag-rule-toggle:hover {
+            color: var(--text-primary);
+            border-color: var(--accent-30);
+        }
+
+        .mag-rule-toggle input {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .mag-rule-toggle__switch {
+            position: relative;
+            width: 26px;
+            height: 14px;
+            flex: none;
+            background: var(--card-br);
+            border-radius: 999px;
+            transition: background .15s ease;
+        }
+
+        .mag-rule-toggle__switch::after {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 10px;
+            height: 10px;
+            content: '';
+            background: var(--text-secondary);
+            border-radius: 50%;
+            transition: transform .15s ease, background .15s ease;
+        }
+
+        .mag-rule-toggle input:checked + .mag-rule-toggle__switch {
+            background: var(--accent-30);
+        }
+
+        .mag-rule-toggle input:checked + .mag-rule-toggle__switch::after {
+            background: var(--accent);
+            transform: translateX(12px);
+        }
+
+        .mag-rule-toggle input:focus-visible + .mag-rule-toggle__switch {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .mag-rule-toggle__name {
+            color: var(--text-primary);
+        }
+
+        .mag-rule-toggle__state {
+            margin-left: auto;
+            font-size: 11px;
+        }
+
+        .mag-rule-toggle__state::before {
+            content: '关闭';
+        }
+
+        .mag-rule-toggle input:checked ~ .mag-rule-toggle__state::before {
+            content: '开启';
+            color: var(--accent);
+        }
+
+        /* ---------- live Mag card ---------- */
+
+        .mag-sim-card__head {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .mag-sim-card__sprite {
+            width: 56px;
+            height: 56px;
+            object-fit: contain;
+            image-rendering: pixelated;
+            flex: none;
+        }
+
+        .mag-sim-card__level {
+            margin-top: 2px;
+            font-size: 12.5px;
+            font-variant-numeric: tabular-nums;
+            color: var(--text-secondary);
+        }
+
+        .mag-sim-card__stats {
+            display: grid;
+            gap: 6px;
+            margin: 10px 0 12px;
+        }
+
+        .mag-sim-card__stat {
+            display: grid;
+            grid-template-columns: 42px minmax(0, 1fr) 64px;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .mag-sim-card__stat-label {
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .mag-sim-card__stat-track {
+            height: 8px;
+            overflow: hidden;
+            background: var(--card-bg);
+            border: 1px solid var(--card-br);
+            border-radius: 5px;
+        }
+
+        .mag-sim-card__stat-fill {
+            height: 100%;
+            border-radius: 5px;
+        }
+
+        .mag-sim-card__stat-fill--pow { background: var(--pow); }
+        .mag-sim-card__stat-fill--dex { background: var(--dex); }
+        .mag-sim-card__stat-fill--mind { background: var(--mind); }
+        .mag-sim-card__stat-fill--def { background: var(--def); }
+
+        .mag-sim-card__stat-value {
+            font-size: 11.5px;
+            font-variant-numeric: tabular-nums;
+            text-align: right;
+            color: var(--text-secondary);
+        }
+
+        .mag-sim-card__next {
+            margin-top: 10px;
+            padding-top: 8px;
+            font-size: 12.5px;
+            color: var(--text-secondary);
+            border-top: 1px solid var(--card-br);
+        }
+
+        .mag-sim-card__next b {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* A third-evolution mag parked on an evolution level re-evolves on the
+           very next feed — the costliest endgame mistake there is, so it gets a
+           loud, unmissable banner rather than another muted hint line. */
+        .mag-sim-card__warn {
+            margin-top: 10px;
+            padding: 8px 10px;
+            font-size: 12.5px;
+            line-height: 1.6;
+            color: #f2c14e;
+            background: rgba(242, 193, 78, .10);
+            border: 1px solid rgba(242, 193, 78, .35);
+            border-radius: 6px;
+        }
+
+        .mag-sim-card__warn b {
+            color: #ffd97a;
+            font-weight: 600;
+        }
+
+        /* ---------- feed bar ---------- */
+
+        .mag-sim-feed__list {
+            display: grid;
+            gap: 6px;
+            margin: 10px 0 14px;
+        }
+
+        .mag-sim-feed__row {
+            display: grid;
+            grid-template-columns: auto 4.5rem 1fr auto;
+            align-items: center;
+            gap: 10px;
+            padding: 3px 0;
+        }
+
+        .mag-sim-feed__btn {
+            padding: 6px 14px;
+            font: inherit;
+            font-size: 12.5px;
+            font-weight: 600;
+            color: var(--accent);
+            background: var(--accent-10);
+            border: 1px solid var(--accent-20);
+            border-radius: 16px;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: color .2s ease, background .2s ease, border-color .2s ease;
+        }
+
+        .mag-sim-feed__btn:hover {
+            color: var(--accent-dark);
+            background: var(--accent);
+        }
+
+        .mag-sim-feed__qty {
+            width: 100%;
+            padding: 5px 7px;
+            font: inherit;
+            font-size: 12.5px;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            border: 1px solid var(--card-br);
+            border-radius: 6px;
+        }
+
+        .mag-sim-feed__count {
+            font-size: 12px;
+            color: var(--text-secondary);
+            text-align: right;
+        }
+
+        .mag-sim-feed__cost {
+            min-width: 4.5rem;
+            font-size: 12px;
+            font-variant-numeric: tabular-nums;
+            color: var(--text-secondary);
+            text-align: right;
+        }
+
+        .mag-sim-feed__actions {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 10px;
+            margin: 12px 0;
+            padding: 10px 0;
+            border-top: 1px solid var(--card-br);
+            border-bottom: 1px solid var(--card-br);
+        }
+
+        .mag-sim-feed__all {
+            padding: 7px 18px;
+            font: inherit;
+            font-size: 12.5px;
+            font-weight: 700;
+            color: var(--accent-dark);
+            background: linear-gradient(135deg, var(--accent), var(--accent-alt));
+            border: none;
+            border-radius: 18px;
+            cursor: pointer;
+        }
+
+        /* 存银行 (the bank / leave-game trick) — an action, but NOT a feed, so it
+           reads as its own control rather than another feed button. */
+        .mag-sim-feed__bank {
+            padding: 6px 14px;
+            font: inherit;
+            font-size: 12.5px;
+            font-weight: 600;
+            color: var(--dex);
+            background: rgba(251, 191, 36, .1);
+            border: 1px solid rgba(251, 191, 36, .35);
+            border-radius: 16px;
+            cursor: pointer;
+        }
+
+        .mag-sim-feed__bank-auto {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12.5px;
+            color: var(--text-secondary);
+            cursor: pointer;
+        }
+
+        .mag-sim-feed__bank-hint {
+            margin: -4px 0 12px;
+            font-size: 12px;
+            line-height: 1.5;
+            color: var(--text-secondary);
+        }
+
+        .mag-sim-feed__bank-hint b {
+            color: var(--dex);
+            font-weight: 600;
+        }
+
+        .mag-sim-feed__cells {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-left: auto;
+        }
+
+        .mag-sim-feed__cells select {
+            padding: 6px 9px;
+            font: inherit;
+            font-size: 12.5px;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            border: 1px solid var(--card-br);
+            border-radius: 6px;
+        }
+
+        .mag-sim-feed__cell-btn {
+            padding: 6px 14px;
+            font: inherit;
+            font-size: 12.5px;
+            font-weight: 600;
+            color: var(--mind);
+            background: rgba(167, 139, 250, .1);
+            border: 1px solid rgba(167, 139, 250, .3);
+            border-radius: 16px;
+            cursor: pointer;
+        }
+
+        .mag-sim-feed__cell-reqs {
+            display: grid;
+            gap: 4px;
+            margin: -4px 0 12px;
+        }
+
+        .mag-sim-feed__cell-req {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px 8px;
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .mag-sim-feed__cell-req b {
+            color: var(--mind);
+            font-weight: 600;
+        }
+
+        .mag-sim-feed__cell-req--race b {
+            color: var(--pow);
+        }
+
+        .mag-sim-feed__totals {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px 16px;
+            font-size: 12.5px;
+            color: var(--text-secondary);
+        }
+
+        .mag-sim-feed__totals b {
+            color: var(--text-primary);
+        }
+
+        /* what the banking trick really costs in wall-clock time */
+        .mag-sim-feed__bank-cost {
+            flex-basis: 100%;
+            color: #f2c14e;
+        }
+
+        /* ---------- history log ---------- */
+
+        .mag-sim-log__list {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            max-height: 240px;
+            margin-top: 10px;
+            padding: 10px 12px;
+            overflow-y: auto;
+            font-size: 12.5px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-br);
+            border-radius: 10px;
+        }
+
+        .mag-sim-log__line {
+            padding: 3px 2px;
+            color: var(--text-secondary);
+        }
+
+        .mag-sim-log__line--ok { color: var(--def); }
+        .mag-sim-log__line--reject { color: var(--pow); }
+
+        /* a bank is not a feed — dashed rule + DEX colour keeps it visually
+           outside the feed sequence it interleaves with */
+        .mag-sim-log__line--bank {
+            padding: 3px 10px;
+            color: var(--dex);
+            border-left: 3px dashed var(--dex);
+            border-radius: 4px;
+        }
+
+        .mag-sim-log__line--evolve {
+            margin: 4px 0;
+            padding: 6px 10px;
+            font-weight: 700;
+            color: var(--text-primary);
+            background: var(--accent-15);
+            border-left: 3px solid var(--accent);
+            border-radius: 6px;
+        }
+
+        .mag-sim-log__mark {
+            font-weight: 700;
+        }
+
+        .mag-sim-log__empty {
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        /* ---------- undo/reset/export controls ---------- */
+
+        .mag-sim-controls__row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .mag-sim-controls__btn {
+            padding: 7px 16px;
+            font: inherit;
+            font-size: 12.5px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            background: var(--card-bg);
+            border: 1px solid var(--card-br);
+            border-radius: 16px;
+            cursor: pointer;
+            transition: color .2s ease, background .2s ease, border-color .2s ease;
+        }
+
+        .mag-sim-controls__btn:hover:not(:disabled) {
+            color: var(--accent);
+            background: var(--accent-10);
+            border-color: var(--accent-20);
+        }
+
+        .mag-sim-controls__btn:disabled {
+            cursor: not-allowed;
+            opacity: .5;
+        }
+
+        .mag-sim-controls__btn--accent {
+            color: var(--accent-dark);
+            background: linear-gradient(135deg, var(--accent), var(--accent-alt));
+            border: none;
+        }
+
+        .mag-sim-controls__status {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        /* ---------- planner (target input + result rendering) ---------- */
+
+        .mag-sim-planner__result {
+            margin-top: 14px;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .mag-sim-planner__loading {
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .mag-sim-planner__ok { margin: 0 0 4px; color: var(--def); font-weight: 600; }
+        .mag-sim-planner__fail { margin: 0; color: var(--pow); font-weight: 600; }
+
+        .mag-sim-planner__reason {
+            margin: 2px 0 0;
+            font-size: 12.5px;
+            color: var(--text-secondary);
+        }
+
+        /* The "no exact solution" banner: same amber warning look as the live
+           card's re-evolution warning (.mag-sim-card__warn), reused here under
+           its own name so it can never be mistaken for the "✅ 低喂食方案"
+           result above it — the plan under this banner reaches the NEAREST
+           point, not the player's actual target. */
+        .mag-sim-planner__warn {
+            display: block;
+            margin: 0 0 10px;
+            padding: 8px 10px;
+            font-weight: 600;
+            line-height: 1.6;
+            color: #f2c14e;
+            background: rgba(242, 193, 78, .10);
+            border: 1px solid rgba(242, 193, 78, .35);
+            border-radius: 6px;
+        }
+
+        /* ---------- planner: step cards + totals ---------- */
+
+        .mag-plan-steps {
+            display: grid;
+            gap: 8px;
+            margin: 4px 0 10px;
+        }
+
+        .mag-plan-step {
+            padding: 10px 12px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-br);
+            border-radius: 9px;
+        }
+
+        .mag-plan-step__head {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 6px;
+        }
+
+        .mag-plan-step__no {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--text-muted);
+        }
+
+        .mag-plan-step__feeder {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .mag-plan-step__feeds {
+            display: grid;
+            gap: 2px;
+            margin: 0 0 6px;
+            padding-left: 18px;
+            font-size: 12.5px;
+            color: var(--text-secondary);
+        }
+
+        .mag-plan-step__bank {
+            margin-bottom: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--dex);
+        }
+
+        .mag-plan-step__evo {
+            padding-top: 6px;
+            font-size: 12.5px;
+            color: var(--text-secondary);
+            border-top: 1px solid var(--card-br);
+        }
+
+        .mag-plan-step__evo b {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .mag-plan-totals {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px 16px;
+            padding-top: 10px;
+            font-size: 12.5px;
+            color: var(--text-secondary);
+            border-top: 1px solid var(--card-br);
+        }
+
+        .mag-plan-totals b {
+            color: var(--text-primary);
+        }
+
+        .mag-plan-actions {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 6px;
+            padding-top: 12px;
+        }
+
+        .mag-plan-actions__note {
+            margin: 0;
+            font-size: 12px;
+            color: #f2c14e;
+        }
+
+        /* ---------- single-window desktop workbench ---------- */
+
+        .mag-sim-page {
+            height: 100vh;
+            min-height: 0;
+            padding: 12px;
+            overflow: hidden;
+        }
+
+        .mag-sim-page header {
+            margin: 0 0 8px;
+        }
+
+        .mag-sim-page #project_title {
+            margin: 0;
+            font-size: 22px;
+            line-height: 32px;
+            letter-spacing: .04em;
+        }
+
+        .mag-sim-page > .back-link {
+            position: fixed;
+            top: 14px;
+            left: 18px;
+            z-index: 3;
+            margin: 0;
+            padding: 5px 12px;
+            font-size: 12px;
+            border-width: 1px;
+            box-shadow: 0 2px 10px var(--shadow-color);
+        }
+
+        .mag-sim-page .content-container {
+            display: flex;
+            flex-direction: column;
+            width: min(1600px, 100%);
+            max-width: none;
+            height: calc(100vh - 52px);
+            min-height: 0;
+            padding: 10px;
+            overflow: hidden;
+            line-height: 1.45;
+            background: rgba(5, 15, 38, .88);
+            border-radius: 10px;
+        }
+
+        .mag-sim__toolbar {
+            display: flex;
+            flex: none;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            min-height: 34px;
+            margin-bottom: 8px;
+            padding: 0 4px;
+        }
+
+        .mag-sim-page .mag-sim__toolbar p {
+            margin: 0;
+            font-size: 12px;
+            white-space: nowrap;
+        }
+
+        .mag-sim-page .mag-sim__toolbar .mag-tabs {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        .mag-sim-page [role="tabpanel"] {
+            flex: 1;
+            min-height: 0;
+        }
+
+        .mag-sim-page #page-panel-planner {
+            overflow: auto;
+        }
+
+        .mag-sim__grid {
+            grid-template-columns: minmax(200px, .9fr) minmax(300px, 1.25fr) minmax(210px, .9fr);
+            grid-template-rows: minmax(0, 1.05fr) minmax(0, .95fr) auto;
+            grid-template-areas:
+                "setup feed log"
+                "card  feed log"
+                "controls controls controls";
+            height: 100%;
+            min-height: 0;
+            gap: 8px;
+            margin-top: 0;
+        }
+
+        .mag-sim__setup { grid-area: setup; }
+        .mag-sim__card { grid-area: card; }
+        .mag-sim__feed { grid-area: feed; }
+        .mag-sim__log { grid-area: log; }
+        .mag-sim__controls { grid-area: controls; }
+
+        .mag-sim__setup,
+        .mag-sim__card,
+        .mag-sim__feed,
+        .mag-sim__log,
+        .mag-sim__controls {
+            min-width: 0;
+            min-height: 0;
+            padding: 10px 12px;
+            overflow: auto;
+            background: linear-gradient(155deg, rgba(20, 45, 76, .76), rgba(5, 17, 40, .9));
+            border: 1px solid var(--accent-20);
+            border-radius: 8px;
+            box-shadow: inset 0 1px rgba(255, 255, 255, .035);
+            scrollbar-width: thin;
+            scrollbar-color: var(--accent-30) transparent;
+        }
+
+        .mag-sim__feed {
+            border-top-color: var(--accent-50);
+        }
+
+        .mag-sim__controls {
+            overflow: visible;
+        }
+
+        .mag-sim-page .mag-sim__grid h2,
+        .mag-sim-page #page-panel-planner h2 {
+            margin: 0 0 8px;
+            padding: 0 0 6px;
+            font-size: 15px;
+            line-height: 1.2;
+            letter-spacing: .025em;
+            border-bottom-width: 1px;
+        }
+
+        .mag-sim-page .mag-sim-setup__block {
+            margin-bottom: 8px;
+            padding: 7px 9px 9px;
+            border-radius: 7px;
+        }
+
+        .mag-sim-page .mag-sim-setup__row {
+            gap: 8px;
+            margin-top: 4px;
+        }
+
+        .mag-sim-page .mag-sim-setup__derived,
+        .mag-sim-page .mag-sim-setup__custom {
+            margin-top: 5px;
+        }
+
+        .mag-sim-page .mag-sim-setup__label {
+            margin-top: 6px;
+        }
+
+        .mag-sim-page .mag-id-chip {
+            padding: 3px 7px 3px 5px;
+            font-size: 11px;
+        }
+
+        .mag-sim-page .mag-section-picker__trigger {
+            min-width: 8.5rem;
+        }
+
+        .mag-sim-page .mag-section-picker__menu {
+            width: 10rem;
+            padding: 6px;
+        }
+
+        .mag-sim-page .mag-class-chip {
+            width: 9rem;
+            min-height: 30px;
+            padding-block: 1px;
+        }
+
+        .mag-sim-page .mag-class-picker__menu {
+            width: 10rem;
+            padding: 6px;
+        }
+
+        .mag-sim-page .mag-rule-toggle {
+            width: 9rem;
+            min-height: 30px;
+            padding-block: 1px;
+        }
+
+        .mag-sim-page .mag-sim-card__head {
+            margin-bottom: 7px;
+        }
+
+        .mag-sim-page .mag-sim-card__sprite {
+            width: 46px;
+            height: 46px;
+        }
+
+        .mag-sim-page .mag-sim-card__stats {
+            gap: 4px;
+            margin: 6px 0 8px;
+        }
+
+        .mag-sim-page .mag-sim-feed__list {
+            gap: 4px;
+            margin: 6px 0 9px;
+        }
+
+        .mag-sim-page .mag-sim-feed__row {
+            gap: 7px;
+            padding: 1px 0;
+        }
+
+        .mag-sim-page .mag-sim-feed__actions {
+            gap: 7px;
+            margin: 8px 0;
+            padding: 8px 0;
+        }
+
+        .mag-sim-page .mag-sim-log__list {
+            height: calc(100% - 31px);
+            max-height: none;
+            margin-top: 0;
+        }
+
+        @media (max-width: 1000px) {
+            .mag-sim__setup,
+            .mag-sim__card,
+            .mag-sim__feed,
+            .mag-sim__log,
+            .mag-sim__controls {
+                padding: 8px;
+            }
+
+            .mag-sim-page .mag-sim-feed__row {
+                grid-template-columns: auto 3.5rem 1fr auto;
+                gap: 4px;
+            }
+
+            .mag-sim-page .mag-sim-feed__btn {
+                padding-inline: 9px;
+            }
+
+            .mag-sim-feed__cost {
+                min-width: 3.75rem;
+            }
+        }
+
+        @media (max-width: 719px) {
+            .mag-sim-page {
+                height: auto;
+                min-height: 100vh;
+                padding: 8px;
+                overflow: auto;
+            }
+
+            .mag-sim-page > .back-link {
+                position: static;
+                align-self: flex-start;
+                margin-bottom: 8px;
+            }
+
+            .mag-sim-page .content-container {
+                height: auto;
+                min-height: 0;
+                overflow: visible;
+            }
+
+            .mag-sim__toolbar {
+                align-items: flex-start;
+            }
+
+            .mag-sim__grid {
+                grid-template-columns: 1fr;
+                grid-template-areas:
+                    "setup"
+                    "card"
+                    "feed"
+                    "log"
+                    "controls";
+                height: auto;
+            }
+
+            .mag-sim__setup,
+            .mag-sim__card,
+            .mag-sim__feed,
+            .mag-sim__log {
+                overflow: visible;
+            }
+
+            .mag-sim-page .mag-sim-log__list {
+                height: auto;
+                max-height: 240px;
+            }
+        }
+    </style>
+</head>
+
+<body class="mag-sim-page">
+    <page-chrome title="Mag Feeder" back-href="https://www.psohaven.com/" back-text="← 返回 Haven PSOBB"></page-chrome>
+
+    <div class="content-container">
+
+        <div class="mag-sim__toolbar">
+            <p><a href="https://www.psohaven.com/tools/mag.html">查看玛古进化图谱 ↗</a></p>
+            <div class="mag-tabs" role="tablist" aria-label="模拟器 / 规划器" data-sim-page-tabs>
+                <button type="button" class="mag-tab" role="tab" id="page-tab-sim" aria-controls="page-panel-sim" aria-selected="true">模拟器</button>
+                <button type="button" class="mag-tab" role="tab" id="page-tab-planner" aria-controls="page-panel-planner" aria-selected="false">规划器</button>
+            </div>
+        </div>
+
+        <div id="page-panel-sim" role="tabpanel" aria-labelledby="page-tab-sim">
+            <div class="mag-sim__grid">
+                <section class="mag-sim__setup" data-sim-setup></section>
+                <section class="mag-sim__card" data-sim-card></section>
+                <section class="mag-sim__feed" data-sim-feed></section>
+                <section class="mag-sim__controls" data-sim-controls></section>
+                <section class="mag-sim__log" data-sim-log></section>
+            </div>
+        </div>
+
+        <div id="page-panel-planner" role="tabpanel" aria-labelledby="page-tab-planner" hidden>
+            <section data-planner></section>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

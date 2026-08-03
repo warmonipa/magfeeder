@@ -1,0 +1,472 @@
+/* Dark Unified Styling for Ephinea PSOBB Pages */
+
+:root {
+    --bg-primary: #0c1838;
+    --bg-secondary: #1a2a4f;
+    --text-primary: #e2e8f0;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --accent: #00d4ff;
+    --accent-hover: #00b8d4;
+    --accent-alt: #00a0ff;
+    --accent-dark: #0a0e27;
+    --heading-h1: #00d4ff;
+    --heading-h2: #00d4ff;
+    --heading-h3: #60a5fa;
+    --heading-h4: #a78bfa;
+    --link-color: #60a5fa;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --accent-glow: rgba(0, 212, 255, 0.08);
+    --accent-purple: rgba(138, 43, 226, 0.08);
+    --accent-5: rgba(0, 212, 255, 0.05);
+    --accent-10: rgba(0, 212, 255, 0.1);
+    --accent-15: rgba(0, 212, 255, 0.15);
+    --accent-20: rgba(0, 212, 255, 0.2);
+    --accent-25: rgba(0, 212, 255, 0.25);
+    --accent-30: rgba(0, 212, 255, 0.3);
+    --accent-40: rgba(0, 212, 255, 0.4);
+    --accent-50: rgba(0, 212, 255, 0.5);
+    --accent-60: rgba(0, 212, 255, 0.6);
+    /* 容器半透明色：从老主题 #1a2332 改成 PSO 蓝 #0c1838，
+       并整体降低不透明度让 body 的 PSO bg.png 透出来。 */
+    --bg-primary-75: rgba(12, 24, 56, 0.55);
+    --bg-primary-80: rgba(12, 24, 56, 0.65);
+    --bg-primary-60: rgba(12, 24, 56, 0.45);
+    --table-header-bg: linear-gradient(135deg, rgba(0, 212, 255, 0.3), rgba(138, 43, 226, 0.3));
+    --shadow-color: rgba(0, 0, 0, 0.25);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    color: var(--text-primary);
+    background-color: #000044;
+    background-image: url('../img/bg/pso_isao_bg.png');
+    background-repeat: repeat;
+    background-attachment: fixed;
+    position: relative;
+}
+
+/* 主页同款柔和角落 glow + 3px 软扫描线，无中央 vignette，让 PSO bg.png 显出来。 */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(ellipse 80% 55% at 95% -5%,  rgba(0, 212, 255, 0.13), transparent 55%),
+        radial-gradient(ellipse 65% 55% at -5% 105%, rgba(110, 40, 210, 0.11), transparent 55%),
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 3px,
+            rgba(0, 0, 0, 0.045) 3px,
+            rgba(0, 0, 0, 0.045) 4px
+        );
+    z-index: 0;
+    pointer-events: none;
+}
+
+body > * {
+    position: relative;
+    z-index: 1;
+}
+
+header {
+    margin-bottom: 25px;
+    text-align: center;
+    width: 100%;
+}
+
+#project_title {
+    color: var(--heading-h1);
+    font-size: 2.8em;
+    font-weight: 800;
+    text-shadow: 0 0 20px var(--accent-50),
+                 0 0 40px var(--accent-30);
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.back-link {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--accent), var(--accent-alt));
+    color: var(--accent-dark);
+    padding: 14px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 700;
+    box-shadow: 0 0 30px var(--accent-40);
+    transition: all 0.3s ease;
+    margin-bottom: 35px;
+    border: 2px solid var(--accent-30);
+}
+
+.back-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 40px var(--accent-60);
+    background: linear-gradient(135deg, var(--accent-hover), var(--accent-alt));
+}
+
+.content-container {
+    max-width: 1200px;
+    width: 100%;
+    background: var(--bg-primary-75);
+    backdrop-filter: blur(3px);
+    border: 1px solid var(--accent-30);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px var(--shadow-color),
+                inset 0 0 0 1px rgba(0, 130, 255, 0.06);
+    line-height: 1.8;
+}
+
+.content-container h1 {
+    color: var(--heading-h1);
+    font-size: 2.2em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid var(--accent-30);
+}
+
+.content-container h2 {
+    color: var(--heading-h2);
+    font-size: 1.8em;
+    font-weight: 600;
+    margin-top: 35px;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--accent-20);
+}
+
+.content-container h3 {
+    color: var(--heading-h3);
+    font-size: 1.4em;
+    font-weight: 600;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.content-container h4 {
+    color: var(--heading-h4);
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 12px;
+}
+
+.content-container p {
+    color: var(--text-primary);
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.content-container ul, .content-container ol {
+    margin-left: 25px;
+    margin-bottom: 15px;
+    color: var(--text-primary);
+}
+
+.content-container li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+.content-container a {
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.content-container a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+.content-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: var(--bg-primary-60);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.content-container table thead {
+    background: var(--table-header-bg);
+    color: var(--text-primary);
+}
+
+.content-container table thead th {
+    border: 1px solid var(--accent-30);
+}
+
+.content-container table th {
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: 600;
+    border: 1px solid var(--accent-20);
+    color: var(--text-primary);
+}
+
+.content-container table th[colspan] {
+    text-align: center;
+}
+
+/* Diagonal split corner header: 右上/左下 两段文字 */
+.content-container table th.diagonal-split {
+    position: relative;
+    min-width: 80px;
+    min-height: 52px;
+    padding: 4px;
+    overflow: hidden;
+}
+
+.content-container table th.diagonal-split::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        45deg,
+        transparent calc(50% - 1.5px),
+        rgba(255, 255, 255, 0.35),
+        transparent calc(50% + 1.5px)
+    );
+    pointer-events: none;
+}
+
+.content-container table th.diagonal-split .ds-top {
+    position: absolute;
+    top: 5px;
+    left: 7px;
+    font-size: 0.82em;
+    line-height: 1;
+}
+
+.content-container table th.diagonal-split .ds-bot {
+    position: absolute;
+    bottom: 5px;
+    right: 7px;
+    font-size: 0.82em;
+    line-height: 1;
+}
+
+.content-container table td {
+    padding: 12px 15px;
+    border: 1px solid var(--accent-10);
+    color: var(--text-primary);
+}
+
+.content-container table tr:hover {
+    background: var(--accent-5);
+}
+
+.content-container code {
+    background: var(--accent-10);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    color: var(--accent);
+    font-size: 0.9em;
+}
+
+.content-container pre {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin-bottom: 15px;
+    border: 1px solid var(--accent-15);
+}
+
+.content-container pre code {
+    background: none;
+    padding: 0;
+}
+
+.content-container blockquote {
+    border-left: 4px solid var(--accent);
+    padding-left: 20px;
+    margin: 20px 0;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+.content-container hr {
+    border: none;
+    border-top: 2px solid var(--accent-20);
+    margin: 30px 0;
+}
+
+.content-container strong {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.content-container del {
+    color: var(--text-muted);
+}
+
+.content-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Navigation Menu Styles */
+.nav-container {
+    background: var(--bg-primary-80);
+    border: 1px solid var(--accent-25);
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 32px var(--shadow-color);
+    backdrop-filter: blur(12px);
+}
+
+.nav-section {
+    margin-bottom: 18px;
+}
+
+.nav-section:last-child {
+    margin-bottom: 0;
+}
+
+.nav-title {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 16px;
+    margin-right: 12px;
+    display: inline-block;
+    text-shadow: 0 0 10px var(--accent-30);
+}
+
+.nav-links {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.nav-link {
+    background: var(--accent-10);
+    color: var(--text-primary);
+    padding: 6px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--accent-20);
+}
+
+.nav-link:hover {
+    background: var(--accent-20);
+    color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Section anchors with offset */
+.section-anchor {
+    display: block;
+    position: relative;
+    top: -80px;
+    visibility: hidden;
+}
+
+/* Back to Top Button */
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-alt));
+    color: var(--accent-dark);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px var(--accent-40);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+#backToTop:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px var(--accent-60);
+}
+
+#backToTop.show {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    #project_title {
+        font-size: 2em;
+    }
+
+    .content-container {
+        padding: 25px;
+    }
+
+    body {
+        padding: 15px;
+    }
+
+    .nav-container {
+        padding: 20px;
+    }
+
+    .nav-section {
+        margin-bottom: 15px;
+    }
+
+    .nav-title {
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    .nav-links {
+        display: flex;
+    }
+
+    #backToTop {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+}
