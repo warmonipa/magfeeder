@@ -92,3 +92,13 @@ above, then regenerate and commit `assets/js/items_i18n.js` together with them.
 English identity retained for lookup. Evolution/feeding snapshots, simulation
 keys, JSON exports and shared links retain their source identities; upstream Mag
 data synchronization cannot overwrite the site's current Chinese display names.
+
+## Shared Mag portraits
+
+The simulator displays the same 46 default Mag portraits as Haven Wiki from
+`assets/img/mag/default/`. These are transparent 900 × 900 WebP renders of the
+original models and textures, with individual chart-reference cameras and no
+player colour modulation. Resource and image hashes, camera parameters and the
+four accepted outline differences are recorded in that directory. Keep the
+accepted portrait set byte-identical between the two projects when updating it.
+The data synchronization command does not update these images.

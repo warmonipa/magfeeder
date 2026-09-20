@@ -680,8 +680,8 @@ function initPageTabs() {
 
 // ---------- live Mag card ----------
 
-const SPRITE_DIR = './assets/img/mag/wiki/';
-function sprite(name) { return `${SPRITE_DIR}${encodeURIComponent(name)}.png`; }
+const SPRITE_DIR = './assets/img/mag/default/';
+function sprite(name) { return `${SPRITE_DIR}${encodeURIComponent(name)}.webp`; }
 
 function esc(s) {
     return String(s).replace(/[&<>"']/g, (c) => ({

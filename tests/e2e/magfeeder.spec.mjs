@@ -14,6 +14,9 @@ test('simulator feeds a Mag and planner produces an exact route', async ({ page 
   await expect(page).toHaveTitle(/玛古模拟器/);
   await expect(page.getByRole('heading', { name: 'Mag Feeder' })).toBeVisible();
   await expect(page.locator('[data-sim-card]')).toContainText('Mag');
+  const portrait = page.locator('.mag-sim-card__sprite');
+  await expect(portrait).toBeVisible();
+  await expect.poll(() => portrait.evaluate(img => img.naturalWidth)).toBe(900);
 
   await page.getByRole('button', { name: '喂 小HP回复液（Monomate）' }).click();
   await expect(page.locator('[data-sim-card]')).toContainText('同步率 23 / 120');

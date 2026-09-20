@@ -1,0 +1,2671 @@
+{
+  "archives": {
+    "model": "37a7e1804c6f5b815b7fa6191597b1b3e653e19ac8b781f213fc049bc6106ce8",
+    "texture": "505efc631a2cd7ec2a3caed38d317d8c280465caf6bb115e31ca45095d31a417"
+  },
+  "models": [
+    {
+      "name": "Agastya",
+      "item_code": "02004C",
+      "model": {
+        "slot": 348,
+        "sha256": "8c81da130f2499bed369f689e11385d5229d4a7950b2ba50e578db4b484f6df0",
+        "size": 13508
+      },
+      "inspection": {
+        "format": "nj",
+        "endianness": "little",
+        "chunks": [
+          "NJTL",
+          "POF0",
+          "NJCM",
+          "POF0",
+          "NMDM",
+          "POF0"
+        ],
+        "texture_count": 2,
+        "model_count": 1,
+        "relocation_count": 61,
+        "model_body_size": 10684
+      },
+      "parser": "rigid",
+      "texture": {
+        "slot": 372,
+        "sha256": "bc1634ccf86a23cee3980c4d6b55808f7a427d391cd7bca0e6ddea296846a458",
+        "size": 16640
+      },
+      "textures": [
+        {
+          "format": 6,
+          "width": 128,
+          "height": 128
+        },
+        {
+          "format": 7,
+          "width": 64,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "name": "Andhaka",
+      "item_code": "020023",
+      "model": {
+        "slot": 306,
+        "sha256": "42e83ee8481ce23e818803e1ef7b18914185d7cd651e623ef84b4ab69509a3de",
+        "size": 5920
+      },
+      "inspection": {
+        "format": "xj",
+        "endianness": "little",
+        "chunks": [
+          "NJTL",
+          "POF0",
+          "NJCM",
+          "POF0"
+        ],
+        "texture_count": 1,
+        "model_count": 1,
+        "relocation_count": 19,
+        "model_body_size": 5688
+      },
+      "parser": "rigid",
+      "texture": {
+        "slot": 330,
+        "sha256": "7387a5a8b745207d52dc9ee0d3dec6d21050062334fbfb71b3b087b146ec2895",
+        "size": 2176
+      },
+      "textures": [
+        {
+          "format": 6,
+          "width": 64,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "name": "Apsaras",
+      "item_code": "020008",
+      "model": {
+        "slot": 279,
+        "sha256": "ae2657221b1cde108103d4eccd99eb25a4cdbbefe6d79e27832f75fed256926c",
+        "size": 11904
+      },
+      "inspection": {
+        "format": "xj",
+        "endianness": "little",
+        "chunks": [
+          "NJTL",
+          "POF0",
+          "NJCM",
+          "POF0"
+        ],
+        "texture_count": 3,
+        "model_count": 1,
+        "relocation_count": 23,
+        "model_body_size": 11608
+      },
+      "parser": "rigid",
+      "texture": {
+        "slot": 303,
+        "sha256": "4070f363a7b1bdee31c18bfac85b14d1bf734f37d4c9b6fd06cf1694108d263e",
+        "size": 4480
+      },
+      "textures": [
+        {
+          "format": 6,
+          "width": 64,
+          "height": 64
+        },
+        {
+          "format": 6,
+          "width": 64,
+          "height": 64
+        },
+        {
+          "format": 6,
+          "width": 16,
+          "height": 16
+        }
+      ]
+    },
+    {
+      "name": "Ashvinau",
+      "item_code": "020014",
+      "model": {
+        "slot": 291,
+        "sha256": "6bee34128b96aedc4c52070a5ed2a2190b192bdf9d65b4996b888fca8ded2875",
+        "size": 4832
+      },
+      "inspection": {
+        "format": "xj",
+        "endianness": "little",
+        "chunks": [
+          "NJTL",
+          "POF0",
+          "NJCM",
+          "POF0"
+        ],
+        "texture_count": 2,
+        "model_count": 1,
+        "relocation_count": 19,
+        "model_body_size": 4568
+      },
+      "parser": "rigid",
+      "texture": {
+        "slot": 315,
+        "sha256": "6ed620de585e28f7a2103b107d2241e19e263798fb278a21632414d1984724ee",
+        "size": 4288
+      },
+      "textures": [
+        {
+          "format": 6,
+          "width": 64,
+          "height": 64
+        },
+        {
+          "format": 6,
+          "width": 64,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "name": "Bana",
+      "item_code": "020024",
+      "model": {
+        "slot": 307,
+        "sha256": "b77dcce9c2011dcdc3c5c1bd96d755e2dd79edcd553b88c61f422e4f7dc66e89",
+        "size": 4224
+      },
+      "inspection": {
+        "format": "xj",
+        "endianness": "little",
+        "chunks": [
+          "NJTL",
+          "POF0",
+          "NJCM",
+          "POF0"
+        ],
+        "texture_count": 1,
+        "model_count": 1,
+        "relocation_count": 15,
+        "model_body_size": 3992
+      },
+      "parser": "rigid",
+      "texture": {
+        "slot": 331,
+        "sha256": "1482daef66a0e64ec85ccc995a867654200b9a4883aafa227399894e06033057",
+        "size": 2176
+      },
+      "textures": [
+        {
+          "format": 6,
+          "width": 64,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "name": "Bhima",
+      "item_code": "020040",
+      "model": {
+        "slot": 336,
+        "sha256": "522d6b35fa605316a58fb65e0321170d0cc8924fabbe111ba08d933a74b08a1f",
+        "size": 8608
+      },
+      "inspection": {
+        "format": "xj",
+        "endianness": "little",
+        "chunks": [
+          "NJTL",
+          "POF0",
+          "NJCM",
+          "POF0"
+        ],
+        "texture_count": 2,
+        "model_count": 1,
+        "relocation_count": 47,
+        "model_body_size": 8312
+      },
+      "parser": "rigid",
+      "texture": {
+        "slot": 360,
+        "sha256": "2ddac8395df5292e2395279e6c0b798841590c5e15df9e3caa9cbc997f71e73f",
+        "size": 4288
+      },
+      "textures": [
+        {
+          "format": 6,
+          "width": 64,
+          "height": 64
+        },
+        {
+          "format": 6,
+          "width": 64,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "name": "Bhirava",
+      "item_code": "02000C",
+      "model": {
+        "slot": 283,
+        "sha256": "bd8c831051551d82b3bb3688c440686aed2c516e3bc3dca507f97411d2107495",
+        "size": 5024
+      },
+      "inspection": {
+        "format": "xj",
+        "endianness": "little",
+        "chunks": [
+          "NJTL",
+          "POF0",
+          "NJCM",
+          "POF0"
+        ],
+        "texture_count": 1,
+        "model_count": 1,
+        "relocation_count": 15,
+        "model_body_size": 4792
+      },
+      "parser": "rigid",
+      "texture": {
+        "slot": 307,
+        "sha256": "03302e99340ac59a2308e8e4ebd00db74ca2eb709b73ce64880457df88712da4",
+        "size": 2176
+      },
+      "textures": [
+        {
+          "format": 6,
+          "width": 64,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "name": "Deva",
+      "item_code": "020039",
+      "model": {
+        "slot": 329,
+        "sha256": "dda1926269300f172e31e1b26ba5250bc2c12ba78ca7b4bb1148efd11e3923c2",
+        "size": 17216
+      },
+      "inspection": {
+        "format": "xj",
+        "endianness": "little",
+        "chunks": [
+          "NJTL",
+          "POF0",
+          "NJCM",
+          "POF0"
+        ],
+        "texture_count": 1,
+        "model_count": 1,
+        "relocation_count": 17,
+        "model_body_size": 16984
+      },
+      "parser": "rigid",
+      "texture": {
+        "slot": 353,
+        "sha256": "aa239a174ce083d45d4443cb4ec61716c503642f5dedfd0a3c86f6e4db823505",
+        "size": 8320
+      },
+      "textures": [
+        {
+          "format": 6,
+          "width": 128,
+          "height": 128
+        }
+      ]
+    },
+    {
+      "name": "Diwari",
+      "item_code": "02003E",
+      "model": {
+        "slot": 334,
+        "sha256": "aa2bd8b3e77c23fbf43c227d05598186cb0e7d70c6ed34b6319e70ce8aae2aa8",
+        "size": 6208
+      },
+      "inspection": {
+        "format": "xj",
+        "endianness": "little",
+        "chunks": [
+          "NJTL",
+          "POF0",
+          "NJCM",
+          "POF0"
+        ],
+        "texture_count": 1,
+        "model_count": 1,
+        "relocation_count": 15,
+        "model_body_size": 5976
+      },
+      "parser": "rigid",
+      "texture": {
+        "slot": 358,
+        "sha256": "03a00efdb4881792e08d565e34e60e7541aae81b6ef02ce9836a5a8f547719c8",
+        "size": 8320
+      },
+      "textures": [
+        {
+          "format": 6,
+          "width": 128,
+          "height": 128
+        }
+      ]
+    },
+    {
+      "name": "Durga",
+      "item_code": "020018",
+      "model": {
+        "slot": 295,
+        "sha256": "48d9870589fbe79f845402babc65a3ca2050cfc788f590a66a1a32f2b076fc1f",
+        "size": 5792
+      },
+      "inspection": {
+        "format": "xj",
+        "endianness": "little",
+        "chunks": [
+          "NJTL",
+          "POF0",
+          "NJCM",
+          "POF0"
+        ],
+        "texture_count": 1,
+        "model_count": 1,
+        "relocation_count": 17,
+        "model_body_size": 5560
+      },
+      "parser": "rigid",
+      "texture": {
+        "slot": 319,
+        "sha256": "093d6df76b22e38f12878e4e756072bbddfc42c8e70f8f435ce1ad7f44cf702f",
+        "size": 8320
+      },
+      "textures": [
+        {
+          "format": 6,
+          "width": 128,
+          "height": 128
+        }
+      ]
+    },
+    {
+      "name": "Garuda",
+      "item_code": "020012",
+      "model": {
+        "slot": 289,
+        "sha256": "4cc9f0c67d2173543c3a7abd5dbedab07a390813f5e278d8a15a5f5fd0d443ad",
+        "size": 10720
+      },
+      "inspection": {
+        "format": "xj",
+        "endianness": "little",
+        "chunks": [
+          "NJTL",
+          "POF0",
+          "NJCM",
+          "POF0",
+          "NJCM",
+          "POF0"
+        ],
+        "texture_count": 1,
+        "model_count": 2,
+        "relocation_count": 28,
+        "model_body_size": 10416
+      },
+      "parser": "rigid",
+      "texture": {
+        "slot": 313,
+        "sha256": "725914db40eb8153b0e742b7903329040bcf9b51a535a919b8179d0e7119c1d6",
+        "size": 8320
+      },
+      "textures": [
+        {
+          "format": 6,
+          "width": 128,
+          "height": 128
+        }
+      ]
+    },
+    {
+      "name": "Ila",
+      "item_code": "020017",
+      "model": {
+        "slot": 294,
+        "sha256": "6b275bee17c947bc67bf88aa91a712d6923e4b180358433db45113eecabba379",
+        "size": 3840
+      },
+      "inspection": {
+        "format": "xj",
+        "endianness": "little",
+        "chunks": [
+          "NJTL",
+          "POF0",
+          "NJCM",
+          "POF0"
+        ],
+        "texture_count": 1,
+        "model_count": 1,
+        "relocation_count": 22,
+        "model_body_size": 3608
+      },
+      "parser": "rigid",
+      "texture": {
+        "slot": 318,
+        "sha256": "d8dbbf70bad3133ca010af3bf9f1bc25574f0ac5b68938013128dfae0245fd9e",
+        "size": 8320
+      },
+      "textures": [
+        {
+          "format": 6,
+          "width": 128,
+          "height": 128
+        }
+      ]
+    },
+    {
+      "name": "Kabanda",
+      "item_code": "02001E",
+      "model": {
+        "slot": 301,
+        "sha256": "ea84bd8a199d0785501e815d03936fb96ad5eca4e600c20e6e0ac6681df84ec8",
+        "size": 5376
+      },
+      "inspection": {
+        "format": "xj",
+        "endianness": "little",
+        "chunks": [
+          "NJTL",
+          "POF0",
+          "NJCM",
+          "POF0"
+        ],
+        "texture_count": 1,
+        "model_count": 1,
+        "relocation_count": 43,
+        "model_body_size": 5112
+      },
+      "parser": "rigid",
+      "texture": {
+        "slot": 325,
+        "sha256": "2f7789bb4a173c1704504a484d6db2b0dbbbd6f232b6fd1018f8633791bc5ba3",
+        "size": 2176
+      },
+      "textures": [
+        {
+          "format": 6,
+          "width": 64,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "name": "Kaitabha",
+      "item_code": "02000A",
+      "model": {
+        "slot": 281,
+        "sha256": "62409a76bdd36f0ee513ebdf7ea44193c2736ab7cd3d002e26d58b72ae38532e",
+        "size": 5664
+      },
+      "inspection": {
+        "format": "xj",
+        "endianness": "little",
+        "chunks": [
+          "NJTL",
+          "POF0",
+          "NJCM",
+          "POF0"
+        ],
+        "texture_count": 1,
+        "model_count": 1,
+        "relocation_count": 20,
+        "model_body_size": 5432
+      },
+      "parser": "rigid",
+      "texture": {
+        "slot": 305,
+        "sha256": "abdb563454060aa802a4df3a028711278f2a341e9d313a893387b4e119140c13",
+        "size": 2176
+      },
+      "textures": [
+        {
+          "format": 6,
+          "width": 64,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "name": "Kalki",
+      "item_code": "02000D",
+      "model": {
+        "slot": 284,
+        "sha256": "2663726a3bbd2bb6ad5a5549e1367d1cf4fb870e912fce92c086a8182bc4782b",
+        "size": 4768
+      },
+      "inspection": {
+        "format": "xj",
+        "endianness": "little",
+        "chunks": [
+          "NJTL",
+          "POF0",
+          "NJCM",
+          "POF0"
+        ],
+        "texture_count": 1,
+        "model_count": 1,
+        "relocation_count": 22,
+        "model_body_size": 4536
+      },
+      "parser": "rigid",
+      "texture": {
+        "slot": 308,
+        "sha256": "981bb80a9b77b95666f528d44fcb287fd095ccae7d6901e294c16af2ebc42369",
+        "size": 2176
+      },
+      "textures": [
+        {
+          "format": 6,
+          "width": 64,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "name": "Kama",
+      "item_code": "020006",
+      "model": {
+        "slot": 277,
+        "sha256": "da9a16f80739bd5a45456a731fd97afc160e365094a55323f2962b88ea180ce1",
+        "size": 6496
+      },
+      "inspection": {
+        "format": "xj",
+        "endianness": "little",
+        "chunks": [
+          "NJTL",
+          "POF0",
+          "NJCM",
+          "POF0"
+        ],
+        "texture_count": 2,
+        "model_count": 1,
+        "relocation_count": 27,
+        "model_body_size": 6232
+      },
+      "parser": "rigid",
+      "texture": {
+        "slot": 301,
+        "sha256": "e14f1eb3757dfdfc97a16f68ec7e50c4a237541c36a2dd467107108eff073610",
+        "size": 2368
+      },
+      "textures": [
+        {
+          "format": 6,
+          "width": 64,
+          "height": 64
+        },
+        {
+          "format": 6,
+          "width": 16,
+          "height": 16
+        }
+      ]
+    },
+    {
+      "name": "Kumara",
+      "item_code": "020009",
+      "model": {
+        "slot": 280,
+        "sha256": "889dbdc9c6a7b42d9e56e2fbd47ff4007425285217f149f16ede92f164458104",
+        "size": 6304
+      },
+      "inspection": {
+        "format": "xj",
+        "endianness": "little",
+        "chunks": [
+          "NJTL",
+          "POF0",
+          "NJCM",
+          "POF0"
+        ],
+        "texture_count": 1,
+        "model_count": 1,
+        "relocation_count": 29,
+        "model_body_size": 6072
+      },
+      "parser": "rigid",
+      "texture": {
+        "slot": 304,
+        "sha256": "fd4a95e537ab19d30d13f1920702cab6421c853eac26210d3d9332fa6017cec9",
+        "size": 2176
+      },
+      "textures": [
+        {
+          "format": 6,
+          "width": 64,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "name": "Madhu",
+      "item_code": "020026",
+      "model": {
+        "slot": 309,
+        "sha256": "0e1f01c770c1f838da47ed50a246e8dd2a8162cc9f2c8e71c81f1b8639cf762f",
+        "size": 5472
+      },
+      "inspection": {
+        "format": "xj",
+        "endianness": "little",
+        "chunks": [
+          "NJTL",
+          "POF0",
+          "NJCM",
+          "POF0"
+        ],
+        "texture_count": 1,
+        "model_count": 1,
+        "relocation_count": 24,
+        "model_body_size": 5240
+      },
+      "parser": "rigid",
+      "texture": {
+        "slot": 333,
+        "sha256": "86777c18684616a86ba54f7082257352ac1c43fb17fc39e9c660026372e57d28",
+        "size": 8320
+      },
+      "textures": [
+        {
+          "format": 6,
+          "width": 128,
+          "height": 128
+        }
+      ]
+    },
+    {
+      "name": "Mag",
+      "item_code": "020000",
+      "model": {
+        "slot": 271,
+        "sha256": "cd8bcbdc93baf9fda8c784aa3383a3b7e37dcd7b4714920e208f33e6ac7604f6",
+        "size": 5312
+      },
+      "inspection": {
+        "format": "xj",
+        "endianness": "little",
+        "chunks": [
+          "NJTL",
+          "POF0",
+          "NJCM",
+          "POF0"
+        ],
+        "texture_count": 2,
+        "model_count": 1,
+        "relocation_count": 16,
+        "model_body_size": 5048
+      },
+      "parser": "rigid",
+      "texture": {
+        "slot": 295,
+        "sha256": "db70da2ce4f8318929d0c5e811375fd0b29d9640d011863a5776444d5d1ec4e9",
+        "size": 832
+      },
+      "textures": [
+        {
+          "format": 6,
+          "width": 32,
+          "height": 32
+        },
+        {
+          "format": 6,
+          "width": 16,
+          "height": 16
+        }
+      ]
+    },
+    {
+      "name": "Marica",
+      "item_code": "020020",
+      "model": {
+        "slot": 303,
+        "sha256": "b09177b1f6d627f4bcd8227b1024b74d0b3e1bbbc08c56dc50db4c86231dbd03",
+        "size": 6816
+      },
+      "inspection": {
+        "format": "xj",
+        "endianness": "little",
+        "chunks": [
+          "NJTL",
+          "POF0",
+          "NJCM",
+          "POF0"
+        ],
+        "texture_count": 2,
+        "model_count": 1,
+        "relocation_count": 48,
+        "model_body_size": 6520
+      },
+      "parser": "rigid",
+      "texture": {
+        "slot": 327,
+        "sha256": "9f35e8ae5c4a548f23f12007aba8f2d1992d4a9c3051ffc559bd46a9c8f7131f",
+        "size": 2304
+      },
+      "textures": [
+        {
+          "format": 6,
+          "width": 64,
+          "height": 64
+        },
+        {
+          "format": 6,
+          "width": 8,
+          "height": 8
+        }
+      ]
+    },
+    {
+      "name": "Marutah",
+      "item_code": "02000F",
+      "model": {
+        "slot": 286,
+        "sha256": "bf90d57cc2e502d76c47e9f5a7629e9f58900d7936b67a73e003268dd40be323",
+        "size": 4640
+      },
+      "inspection": {
+        "format": "xj",
+        "endianness": "little",
+        "chunks": [
+          "NJTL",
+          "POF0",
+          "NJCM",
+          "POF0"
+        ],
+        "texture_count": 1,
+        "model_count": 1,
+        "relocation_count": 24,
+        "model_body_size": 4408
+      },
+      "parser": "rigid",
+      "texture": {
+        "slot": 310,
+        "sha256": "17866221ddb8cc7585307054571a7b6d1deb701c7162d449fefc3330853f0cc3",
+        "size": 8320
+      },
+      "textures": [
+        {
+          "format": 6,
+          "width": 128,
+          "height": 128
+        }
+      ]
+    },
+    {
+      "name": "Mitra",
+      "item_code": "020002",
+      "model": {
+        "slot": 273,
+        "sha256": "8ba9cfcf7c8d5dcae8d3fb2291a2a3c948462da41b87093675a205727cb44072",
+        "size": 3840
+      },
+      "inspection": {
+        "format": "xj",
+        "endianness": "little",
+        "chunks": [
+          "NJTL",
+          "POF0",
+          "NJCM",
+          "POF0"
+        ],
+        "texture_count": 1,
+        "model_count": 1,
+        "relocation_count": 15,
+        "model_body_size": 3608
+      },
+      "parser": "rigid",
+      "texture": {
+        "slot": 297,
+        "sha256": "09d7393d58e222a38de7c67234dd9fe86da3055e2cedcb29828b574687cc22a9",
+        "size": 2176
+      },
+      "textures": [
+        {
+          "format": 6,
+          "width": 64,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "name": "Naga",
+      "item_code": "02001C",
+      "model": {
+        "slot": 299,
+        "sha256": "c822757c2a499861c8a4f01a953a2d7d5b27a03f79bb5fe906517e6fe4b35052",
+        "size": 5608
+      },
+      "inspection": {
+        "format": "nj",
+        "endianness": "little",
+        "chunks": [
+          "NJTL",
+          "POF0",
+          "NJCM",
+          "POF0",
+          "NMDM",
+          "POF0"
+        ],
+        "texture_count": 2,
+        "model_count": 1,
+        "relocation_count": 41,
+        "model_body_size": 4352
+      },
+      "parser": "rigid",
+      "texture": {
+        "slot": 323,
+        "sha256": "49760ee8caf06119e9094d8323634b478cf15ec17a75c6cfd6cfc375efe18f7a",
+        "size": 8512
+      },
+      "textures": [
+        {
+          "format": 6,
+          "width": 128,
+          "height": 128
+        },
+        {
+          "format": 6,
+          "width": 16,
+          "height": 16
+        }
+      ]
+    },
+    {
+      "name": "Namuci",
+      "item_code": "02001A",
+      "model": {
+        "slot": 297,
+        "sha256": "2e482097c5524ca8d905e31707d78db18fc0c27bc3f5b3b25cd92ad3379e93cf",
+        "size": 5248
+      },
+      "inspection": {
+        "format": "xj",
+        "endianness": "little",
+        "chunks": [
+          "NJTL",
+          "POF0",
+          "NJCM",
+          "POF0"
+        ],
+        "texture_count": 1,
+        "model_count": 1,
+        "relocation_count": 17,
+        "model_body_size": 5016
+      },
+      "parser": "rigid",
+      "texture": {
+        "slot": 321,
+        "sha256": "19b16f55826dd6cb8ed6cee291392f53026819f5fedfa76e3af24187ada74136",
+        "size": 8320
+      },
+      "textures": [
+        {
+          "format": 6,
+          "width": 128,
+          "height": 128
+        }
+      ]
+    },
+    {
+      "name": "Nandin",
+      "item_code": "020013",
+      "model": {
+        "slot": 290,
+        "sha256": "925e90685b2fb6d5b2c9babca1fb9eade9d1d61297dceeee3296a963ca0a6ed5",
+        "size": 4832
+      },
+      "inspection": {
+        "format": "xj",
+        "endianness": "little",
+        "chunks": [
+          "NJTL",
+          "POF0",
+          "NJCM",
+          "POF0"
+        ],
+        "texture_count": 1,
+        "model_count": 1,
+        "relocation_count": 29,
+        "model_body_size": 4600
+      },
+      "parser": "rigid",
+      "texture": {
+        "slot": 314,
+        "sha256": "63f7fb54453ae143f564e107789b2f134607357d0d1a74d030833f1ae7dfb4ab",
+        "size": 8320
+      },
+      "textures": [
+        {
+          "format": 6,
+          "width": 128,
+          "height": 128
+        }
+      ]
+    },
+    {
+      "name": "Naraka",
+      "item_code": "020025",
+      "model": {
+        "slot": 308,
+        "sha256": "785dba681d6eba0b9e8349c239d8ec2411ca3b53baa535326e8bebd5cad7ad8a",
+        "size": 6144
+      },
+      "inspection": {
+        "format": "xj",
+        "endianness": "little",
+        "chunks": [
+          "NJTL",
+          "POF0",
+          "NJCM",
+          "POF0"
+        ],
+        "texture_count": 2,
+        "model_count": 1,
+        "relocation_count": 30,
+        "model_body_size": 5880
+      },
+      "parser": "rigid",
+      "texture": {
+        "slot": 332,
+        "sha256": "112c41e8b8c98ea1339955cf034fbb2b8894d159c8c57962a5a490091cc580ff",
+        "size": 2368
+      },
+      "textures": [
+        {
+          "format": 6,
+          "width": 64,
+          "height": 64
+        },
+        {
+          "format": 6,
+          "width": 16,
+          "height": 16
+        }
+      ]
+    },
+    {
+      "name": "Nidra",
+      "item_code": "020041",
+      "model": {
+        "slot": 337,
+        "sha256": "9de9e75751427457f7fe6be221a3016883c593e358f1aee5bdcf49667a6aa8ae",
+        "size": 13792
+      },
+      "inspection": {
+        "format": "xj",
+        "endianness": "little",
+        "chunks": [
+          "NJTL",
+          "POF0",
+          "NJCM",
+          "POF0"
+        ],
+        "texture_count": 2,
+        "model_count": 1,
+        "relocation_count": 46,
+        "model_body_size": 13496
+      },
+      "parser": "rigid",
+      "texture": {
+        "slot": 361,
+        "sha256": "e1a50c67fe234e1e9d3c79e33d43244faa6fb8a55a36d4f7e08f7782d8a1ea9c",
+        "size": 2496
+      },
+      "textures": [
+        {
+          "format": 6,
+          "width": 64,
+          "height": 64
+        },
+        {
+          "format": 7,
+          "width": 16,
+          "height": 16
+        }
+      ]
+    },
+    {
+      "name": "Pushan",
+      "item_code": "02003D",
+      "model": {
+        "slot": 333,
+        "sha256": "f0d3610b3fc668923d971e2ebd714f9b8a25d15c5e968ac975a72ff76c4695db",
+        "size": 8768
+      },
+      "inspection": {
+        "format": "xj",
+        "endianness": "little",
+        "chunks": [
+          "NJTL",
+          "POF0",
+          "NJCM",
+          "POF0"
+        ],
+        "texture_count": 1,
+        "model_count": 1,
+        "relocation_count": 29,
+        "model_body_size": 8536
+      },
+      "parser": "rigid",
+      "texture": {
+        "slot": 357,
+        "sha256": "67f28f3ebb902a4ade8e30803dd924c91d32f68ff0a92a8c697b6f0e8fee383d",
+        "size": 8320
+      },
+      "textures": [
+        {
+          "format": 6,
+          "width": 128,
+          "height": 128
+        }
+      ]
+    },
+    {
+      "name": "Rati",
+      "item_code": "02003A",
+      "model": {
+        "slot": 330,
+        "sha256": "8ac98ee71e151e8d582086b56b0de74386d792599e2686c506197ca2ce71b9a3",
+        "size": 9120
+      },
+      "inspection": {
+        "format": "xj",
+        "endianness": "little",
+        "chunks": [
+          "NJTL",
+          "POF0",
+          "NJCM",
+          "POF0"
+        ],
+        "texture_count": 1,
+        "model_count": 1,
+        "relocation_count": 16,
+        "model_body_size": 8888
+      },
+      "parser": "rigid",
+      "texture": {
+        "slot": 354,
+        "sha256": "78c9074873ea4e036bbcedfe2ac9d58e088366a4a90b968be657e29e6dc40e33",
+        "size": 8320
+      },
+      "textures": [
+        {
+          "format": 6,
+          "width": 128,
+          "height": 128
+        }
+      ]
+    },
+    {
+      "name": "Ravana",
+      "item_code": "02001F",
+      "model": {
+        "slot": 302,
+        "sha256": "2ea29e1df690cc179988988581ebe300982f3a6498848796dae3d4a77d795df4",
+        "size": 6016
+      },
+      "inspection": {
+        "format": "xj",
+        "endianness": "little",
+        "chunks": [
+          "NJTL",
+          "POF0",
+          "NJCM",
+          "POF0"
+        ],
+        "texture_count": 4,
+        "model_count": 1,
+        "relocation_count": 34,
+        "model_body_size": 5624
+      },
+      "parser": "rigid",
+      "texture": {
+        "slot": 326,
+        "sha256": "b6ee4b20812c45a08834f5e01af07816f0ec7b91f42f45ab4ae3c393aba9a772",
+        "size": 3904
+      },
+      "textures": [
+        {
+          "format": 6,
+          "width": 32,
+          "height": 32
+        },
+        {
+          "format": 6,
+          "width": 32,
+          "height": 32
+        },
+        {
+          "format": 6,
+          "width": 32,
+          "height": 32
+        },
+        {
+          "format": 6,
+          "width": 64,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "name": "Ribhava",
+      "item_code": "020015",
+      "model": {
+        "slot": 292,
+        "sha256": "7478ef059b36fbb456d47e80ffa93fa26722f33b88b50e409983b763df82d4df",
+        "size": 5984
+      },
+      "inspection": {
+        "format": "xj",
+        "endianness": "little",
+        "chunks": [
+          "NJTL",
+          "POF0",
+          "NJCM",
+          "POF0"
+        ],
+        "texture_count": 1,
+        "model_count": 1,
+        "relocation_count": 29,
+        "model_body_size": 5752
+      },
+      "parser": "rigid",
+      "texture": {
+        "slot": 316,
+        "sha256": "d369d866ee1c78cdcb5e713522b167ab880eb452ca366e85c655dfcb775f4d93",
+        "size": 8320
+      },
+      "textures": [
+        {
+          "format": 6,
+          "width": 128,
+          "height": 128
+        }
+      ]
+    },
+    {
+      "name": "Rudra",
+      "item_code": "02000E",
+      "model": {
+        "slot": 285,
+        "sha256": "66965ad9e831e3631024278d2ac58bea6075160dbb9478092139e8b6db092971",
+        "size": 5184
+      },
+      "inspection": {
+        "format": "xj",
+        "endianness": "little",
+        "chunks": [
+          "NJTL",
+          "POF0",
+          "NJCM",
+          "POF0"
+        ],
+        "texture_count": 1,
+        "model_count": 1,
+        "relocation_count": 36,
+        "model_body_size": 4920
+      },
+      "parser": "rigid",
+      "texture": {
+        "slot": 309,
+        "sha256": "5d4c21b9134330642c1e800bf31a27870773dd33dec7235cefc4ec4d02ceedad",
+        "size": 2176
+      },
+      "textures": [
+        {
+          "format": 6,
+          "width": 64,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "name": "Rukmin",
+      "item_code": "02003C",
+      "model": {
+        "slot": 332,
+        "sha256": "dd7a53544f8d54d64fa3f755194a04d10ce2566c8eef11b8fa7b6a0ba537625f",
+        "size": 9824
+      },
+      "inspection": {
+        "format": "xj",
+        "endianness": "little",
+        "chunks": [
+          "NJTL",
+          "POF0",
+          "NJCM",
+          "POF0"
+        ],
+        "texture_count": 1,
+        "model_count": 1,
+        "relocation_count": 22,
+        "model_body_size": 9592
+      },
+      "parser": "rigid",
+      "texture": {
+        "slot": 356,
+        "sha256": "31eb85d7d7498287336710690bf083a401ec62a3e2fd78704c64239d949f2cc6",
+        "size": 8320
+      },
+      "textures": [
+        {
+          "format": 6,
+          "width": 128,
+          "height": 128
+        }
+      ]
+    },
+    {
+      "name": "Sato",
+      "item_code": "02003F",
+      "model": {
+        "slot": 335,
+        "sha256": "55a17a265eef75c511fcb6bd3b7fde42e051ca2dc19cc6a92ce71c5120b4a473",
+        "size": 5300
+      },
+      "inspection": {
+        "format": "nj",
+        "endianness": "little",
+        "chunks": [
+          "NJTL",
+          "POF0",
+          "NJCM",
+          "POF0",
+          "NMDM",
+          "POF0"
+        ],
+        "texture_count": 1,
+        "model_count": 1,
+        "relocation_count": 30,
+        "model_body_size": 4496
+      },
+      "parser": "weighted NJ vertex chunks cannot be represented by rigid XJ/GJ item models",
+      "texture": {
+        "slot": 359,
+        "sha256": "9d525bd1a3c5e98855032be678cbea324dfc2868e817c24dc9c8a98637a955c4",
+        "size": 2176
+      },
+      "textures": [
+        {
+          "format": 6,
+          "width": 64,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "name": "Savitri",
+      "item_code": "02003B",
+      "model": {
+        "slot": 331,
+        "sha256": "05fd7dd56ec8643e4a84c23b2dab6da9e0f58d02a33de06c95264dfdd902edb4",
+        "size": 17248
+      },
+      "inspection": {
+        "format": "xj",
+        "endianness": "little",
+        "chunks": [
+          "NJTL",
+          "POF0",
+          "NJCM",
+          "POF0"
+        ],
+        "texture_count": 1,
+        "model_count": 1,
+        "relocation_count": 30,
+        "model_body_size": 16984
+      },
+      "parser": "rigid",
+      "texture": {
+        "slot": 355,
+        "sha256": "b8b51985c0fbdeeeac6aeb1a8a50afb82ed94763f5345d957db930199ec6e6e5",
+        "size": 8320
+      },
+      "textures": [
+        {
+          "format": 6,
+          "width": 128,
+          "height": 128
+        }
+      ]
+    },
+    {
+      "name": "Sita",
+      "item_code": "020011",
+      "model": {
+        "slot": 288,
+        "sha256": "9531a8c429db7ccf7be792a38cbc907878a5ca60a43904cb4ca624118bcaeba4",
+        "size": 14144
+      },
+      "inspection": {
+        "format": "xj",
+        "endianness": "little",
+        "chunks": [
+          "NJTL",
+          "POF0",
+          "NJCM",
+          "POF0"
+        ],
+        "texture_count": 4,
+        "model_count": 1,
+        "relocation_count": 25,
+        "model_body_size": 13784
+      },
+      "parser": "rigid",
+      "texture": {
+        "slot": 312,
+        "sha256": "450c2117fe1dd59d97ac63f1f2db17bc505fdd959d270b4f66f00c3aa22efe4c",
+        "size": 1600
+      },
+      "textures": [
+        {
+          "format": 6,
+          "width": 32,
+          "height": 32
+        },
+        {
+          "format": 6,
+          "width": 16,
+          "height": 16
+        },
+        {
+          "format": 6,
+          "width": 16,
+          "height": 16
+        },
+        {
+          "format": 6,
+          "width": 32,
+          "height": 32
+        }
+      ]
+    },
+    {
+      "name": "Soma",
+      "item_code": "020016",
+      "model": {
+        "slot": 293,
+        "sha256": "fc7e6b44cbbf1f9c75d227efd62e8cf49fbb552fcced6dfe7abb745082edb36f",
+        "size": 4672
+      },
+      "inspection": {
+        "format": "xj",
+        "endianness": "little",
+        "chunks": [
+          "NJTL",
+          "POF0",
+          "NJCM",
+          "POF0"
+        ],
+        "texture_count": 1,
+        "model_count": 1,
+        "relocation_count": 22,
+        "model_body_size": 4440
+      },
+      "parser": "rigid",
+      "texture": {
+        "slot": 317,
+        "sha256": "f18baf132df5a49c1b4848eeb6a06bcb3770dc34b13374db18c61a9b9cc3a30c",
+        "size": 8320
+      },
+      "textures": [
+        {
+          "format": 6,
+          "width": 128,
+          "height": 128
+        }
+      ]
+    },
+    {
+      "name": "Sumba",
+      "item_code": "02001B",
+      "model": {
+        "slot": 298,
+        "sha256": "af3772ae13dfa38fa08f610f78b7bb07859184e72aeb4456f4ff76f64a68d997",
+        "size": 4256
+      },
+      "inspection": {
+        "format": "xj",
+        "endianness": "little",
+        "chunks": [
+          "NJTL",
+          "POF0",
+          "NJCM",
+          "POF0"
+        ],
+        "texture_count": 1,
+        "model_count": 1,
+        "relocation_count": 22,
+        "model_body_size": 4024
+      },
+      "parser": "rigid",
+      "texture": {
+        "slot": 322,
+        "sha256": "c8ad3feb41d04fd5dd3e296516b7b98665ec68f3cb6bd20008b7ab9b620eb4ed",
+        "size": 2176
+      },
+      "textures": [
+        {
+          "format": 6,
+          "width": 64,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "name": "Surya",
+      "item_code": "020003",
+      "model": {
+        "slot": 274,
+        "sha256": "999782d19ead701741944e9234a4bfe1bb62c0638676e58ced262fc348a196b7",
+        "size": 4448
+      },
+      "inspection": {
+        "format": "xj",
+        "endianness": "little",
+        "chunks": [
+          "NJTL",
+          "POF0",
+          "NJCM",
+          "POF0"
+        ],
+        "texture_count": 1,
+        "model_count": 1,
+        "relocation_count": 22,
+        "model_body_size": 4216
+      },
+      "parser": "rigid",
+      "texture": {
+        "slot": 298,
+        "sha256": "7b3e8fdf39839c7af92f04a5018fb5118f9714d4f3af479afa02b37524af8826",
+        "size": 2176
+      },
+      "textures": [
+        {
+          "format": 6,
+          "width": 64,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "name": "Tapas",
+      "item_code": "02000B",
+      "model": {
+        "slot": 282,
+        "sha256": "c4cd57e51654a6f645e7658cc14a437372898362a227acb4c0b1ec76f1b60e8b",
+        "size": 8800
+      },
+      "inspection": {
+        "format": "xj",
+        "endianness": "little",
+        "chunks": [
+          "NJTL",
+          "POF0",
+          "NJCM",
+          "POF0"
+        ],
+        "texture_count": 1,
+        "model_count": 1,
+        "relocation_count": 19,
+        "model_body_size": 8568
+      },
+      "parser": "rigid",
+      "texture": {
+        "slot": 306,
+        "sha256": "bab6153ddf26556e70b4056d09449afd10ec4899666b348917c624e7f808733d",
+        "size": 2176
+      },
+      "textures": [
+        {
+          "format": 6,
+          "width": 64,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "name": "Ushasu",
+      "item_code": "020007",
+      "model": {
+        "slot": 278,
+        "sha256": "60b6b6d4be0fc8206d4d343b020f6215fa55c0de76bd1713cdf9dd40f73f91dc",
+        "size": 10784
+      },
+      "inspection": {
+        "format": "xj",
+        "endianness": "little",
+        "chunks": [
+          "NJTL",
+          "POF0",
+          "NJCM",
+          "POF0"
+        ],
+        "texture_count": 1,
+        "model_count": 1,
+        "relocation_count": 17,
+        "model_body_size": 10552
+      },
+      "parser": "rigid",
+      "texture": {
+        "slot": 302,
+        "sha256": "2e50442cfa2ee0431e4365b5033323fd548bd86440d48f6ebeeb4e41f6ccb7a9",
+        "size": 8320
+      },
+      "textures": [
+        {
+          "format": 6,
+          "width": 128,
+          "height": 128
+        }
+      ]
+    },
+    {
+      "name": "Varaha",
+      "item_code": "020005",
+      "model": {
+        "slot": 276,
+        "sha256": "1b9773f424eb433ecd1b752d58ebe50cda7276c591503ecf34800b6338febac4",
+        "size": 9152
+      },
+      "inspection": {
+        "format": "xj",
+        "endianness": "little",
+        "chunks": [
+          "NJTL",
+          "POF0",
+          "NJCM",
+          "POF0",
+          "NJCM",
+          "POF0"
+        ],
+        "texture_count": 2,
+        "model_count": 2,
+        "relocation_count": 37,
+        "model_body_size": 8816
+      },
+      "parser": "rigid",
+      "texture": {
+        "slot": 300,
+        "sha256": "7a30b819b767acba93f0109706a3b5e4fe67bd907496556ae55227d075edf57d",
+        "size": 2368
+      },
+      "textures": [
+        {
+          "format": 6,
+          "width": 64,
+          "height": 64
+        },
+        {
+          "format": 6,
+          "width": 16,
+          "height": 16
+        }
+      ]
+    },
+    {
+      "name": "Varuna",
+      "item_code": "020001",
+      "model": {
+        "slot": 272,
+        "sha256": "c7dfe213f4b2b4233999edc34aef6dc003388c04be64eef4f38bbb2a996e58b8",
+        "size": 4672
+      },
+      "inspection": {
+        "format": "xj",
+        "endianness": "little",
+        "chunks": [
+          "NJTL",
+          "POF0",
+          "NJCM",
+          "POF0"
+        ],
+        "texture_count": 1,
+        "model_count": 1,
+        "relocation_count": 24,
+        "model_body_size": 4440
+      },
+      "parser": "rigid",
+      "texture": {
+        "slot": 296,
+        "sha256": "b775b665b2882b61c58a88bdd770ef6fe4bd11e73a18fdfea710d0c5d2a3bff8",
+        "size": 2176
+      },
+      "textures": [
+        {
+          "format": 6,
+          "width": 64,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "name": "Vayu",
+      "item_code": "020004",
+      "model": {
+        "slot": 275,
+        "sha256": "b13380eaee346a89e2a2a2fb8281febca11a49e49b16e86d3574d679a3a911b9",
+        "size": 6976
+      },
+      "inspection": {
+        "format": "xj",
+        "endianness": "little",
+        "chunks": [
+          "NJTL",
+          "POF0",
+          "NJCM",
+          "POF0"
+        ],
+        "texture_count": 1,
+        "model_count": 1,
+        "relocation_count": 17,
+        "model_body_size": 6744
+      },
+      "parser": "rigid",
+      "texture": {
+        "slot": 299,
+        "sha256": "8d862e07cb0c1f16ed351cb3d56a198bd2fe745af57df5ba576d421687893407",
+        "size": 2176
+      },
+      "textures": [
+        {
+          "format": 6,
+          "width": 64,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "name": "Vritra",
+      "item_code": "020019",
+      "model": {
+        "slot": 296,
+        "sha256": "f3a001bf366fc88deb76ed6b8d2d34de5c0f91d40836192d05630b43f8d52d6a",
+        "size": 3904
+      },
+      "inspection": {
+        "format": "xj",
+        "endianness": "little",
+        "chunks": [
+          "NJTL",
+          "POF0",
+          "NJCM",
+          "POF0"
+        ],
+        "texture_count": 1,
+        "model_count": 1,
+        "relocation_count": 22,
+        "model_body_size": 3672
+      },
+      "parser": "rigid",
+      "texture": {
+        "slot": 320,
+        "sha256": "aa423cb4f7e75b2e1b2d3e6c63dcab52866a87544911a967b63cb78dc3cb0770",
+        "size": 2176
+      },
+      "textures": [
+        {
+          "format": 6,
+          "width": 64,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "name": "Yaksa",
+      "item_code": "020010",
+      "model": {
+        "slot": 287,
+        "sha256": "ceb89933e299ab41536d03eed39d916555dcee69f5e740c1519148f326bdd91e",
+        "size": 5888
+      },
+      "inspection": {
+        "format": "xj",
+        "endianness": "little",
+        "chunks": [
+          "NJTL",
+          "POF0",
+          "NJCM",
+          "POF0"
+        ],
+        "texture_count": 2,
+        "model_count": 1,
+        "relocation_count": 16,
+        "model_body_size": 5624
+      },
+      "parser": "rigid",
+      "texture": {
+        "slot": 311,
+        "sha256": "28ccb65c071b7eebd4a7eef331af4723672b0cb532be20cfb0859eb85cd75eb5",
+        "size": 4288
+      },
+      "textures": [
+        {
+          "format": 6,
+          "width": 64,
+          "height": 64
+        },
+        {
+          "format": 6,
+          "width": 64,
+          "height": 64
+        }
+      ]
+    }
+  ],
+  "cameras": {
+    "Agastya": {
+      "yaw": 35.36961021199727,
+      "elevation": -2.5630463800115564,
+      "roll": 17.416797989266673,
+      "silhouette_iou": 0.6220338983050847,
+      "pixels_per_unit": 619.8336688563721,
+      "projected_center": [
+        0.0036386672633260467,
+        -0.0023254804326626917
+      ],
+      "reference_center": [
+        31.0,
+        32.0
+      ],
+      "projection": "perspective",
+      "distance": 168.7840214377609,
+      "world_center": [
+        -0.0018334388732910156,
+        2.2624749839305878,
+        -1.396275281906128
+      ],
+      "framing_padding": 1.14
+    },
+    "Andhaka": {
+      "yaw": 20.26154671270028,
+      "elevation": -5.175638487825529,
+      "roll": 0.38545864186902923,
+      "silhouette_iou": 0.8901581722319859,
+      "pixels_per_unit": 13.306829802629071,
+      "projected_center": [
+        0.004366708878394299,
+        0.07537471750982627
+      ],
+      "reference_center": [
+        31.5,
+        32.0
+      ]
+    },
+    "Apsaras": {
+      "yaw": 36.30844261012656,
+      "elevation": -20.975902571204347,
+      "roll": 3.4170578639543847,
+      "silhouette_iou": 0.8956109134045077,
+      "pixels_per_unit": 5.394033290581404,
+      "projected_center": [
+        -0.6611053018725359,
+        1.902158268960265
+      ],
+      "reference_center": [
+        31.5,
+        32.0
+      ]
+    },
+    "Ashvinau": {
+      "yaw": 23.671544494476247,
+      "elevation": -22.01537560875051,
+      "roll": 0.020849196859964225,
+      "silhouette_iou": 0.942215088282504,
+      "pixels_per_unit": 10.702656667335754,
+      "projected_center": [
+        1.9381581874046132,
+        -1.8083958553343742
+      ],
+      "reference_center": [
+        33.5,
+        31.5
+      ]
+    },
+    "Bana": {
+      "yaw": 44.85588582089784,
+      "elevation": 24.74191873631067,
+      "roll": 3.901325314208596,
+      "silhouette_iou": 0.8887867647058824,
+      "pixels_per_unit": 91.47259689676717,
+      "projected_center": [
+        0.017417502680645736,
+        -0.026480121604176357
+      ],
+      "reference_center": [
+        31.5,
+        30.5
+      ],
+      "projection": "perspective",
+      "distance": 11.336759977867715,
+      "world_center": [
+        0.0,
+        2.467210054397583,
+        -0.5243399143218994
+      ]
+    },
+    "Bhima": {
+      "yaw": 37.58344015847297,
+      "elevation": 7.7978807287403,
+      "roll": 0.268058393951776,
+      "silhouette_iou": 0.897364771151179,
+      "pixels_per_unit": 153.88026202780713,
+      "projected_center": [
+        0.018027000301707855,
+        -0.008980351349553856
+      ],
+      "reference_center": [
+        31.0,
+        30.5
+      ],
+      "projection": "perspective",
+      "distance": 17.645994353777013,
+      "world_center": [
+        4.76837158203125e-07,
+        -0.0846700668334961,
+        0.9194267690181732
+      ]
+    },
+    "Bhirava": {
+      "yaw": 46.235683262476705,
+      "elevation": 15.28323542342871,
+      "roll": 0.9959850304001794,
+      "silhouette_iou": 0.9413173652694611,
+      "pixels_per_unit": 8.099926835096342,
+      "projected_center": [
+        0.4295236975367155,
+        -0.18028931560584982
+      ],
+      "reference_center": [
+        32.5,
+        31.0
+      ]
+    },
+    "Deva": {
+      "yaw": 56.809191304397075,
+      "elevation": 15.837388759387622,
+      "roll": -1.3548414919322749,
+      "silhouette_iou": 0.9436813186813187,
+      "pixels_per_unit": 9.923818189300459,
+      "projected_center": [
+        1.5037349147207433,
+        -0.9198894589173436
+      ],
+      "reference_center": [
+        32.5,
+        30.5
+      ]
+    },
+    "Diwari": {
+      "yaw": -19.574042688207864,
+      "elevation": -9.202272891118966,
+      "roll": -17.168064471876963,
+      "silhouette_iou": 0.9120567375886525,
+      "pixels_per_unit": 5.670121235419773,
+      "projected_center": [
+        0.3862440190352534,
+        2.9067720217706965
+      ],
+      "reference_center": [
+        32.5,
+        31.5
+      ]
+    },
+    "Durga": {
+      "yaw": 49.0159579323964,
+      "elevation": -25.31934451662774,
+      "roll": 0.864623919851786,
+      "silhouette_iou": 0.900374531835206,
+      "pixels_per_unit": 8.146650991265558,
+      "projected_center": [
+        1.0308279628442278,
+        0.9643880604631798
+      ],
+      "reference_center": [
+        31.5,
+        31.0
+      ]
+    },
+    "Garuda": {
+      "yaw": 61.69671760084545,
+      "elevation": 15.784080514235132,
+      "roll": -11.206302767922365,
+      "silhouette_iou": 0.7972575905974535,
+      "pixels_per_unit": 38.86206819319065,
+      "projected_center": [
+        0.06152904098018819,
+        -0.18324871444053975
+      ],
+      "reference_center": [
+        29.5,
+        30.5
+      ],
+      "projection": "perspective",
+      "distance": 7.683813287537734,
+      "world_center": [
+        0.0,
+        0.24660221487283707,
+        -1.2610398530960083
+      ]
+    },
+    "Ila": {
+      "yaw": 41.69156148352303,
+      "elevation": 21.423429106668557,
+      "roll": 0.7471890017046459,
+      "silhouette_iou": 0.9205526770293609,
+      "pixels_per_unit": 136.4077983348985,
+      "projected_center": [
+        0.015791125660873248,
+        -0.019429176696282052
+      ],
+      "reference_center": [
+        33.5,
+        31.5
+      ],
+      "projection": "perspective",
+      "distance": 15.25222788399474,
+      "world_center": [
+        2.0142011642456055,
+        4.172325134277344e-07,
+        0.18844783306121826
+      ]
+    },
+    "Kabanda": {
+      "yaw": 28.206124607545835,
+      "elevation": 5.36432535427292,
+      "roll": 0.5525475974050558,
+      "silhouette_iou": 0.9443651925820257,
+      "pixels_per_unit": 76.90553050057449,
+      "projected_center": [
+        0.06840725362344943,
+        -0.017869600525205365
+      ],
+      "reference_center": [
+        31.0,
+        31.5
+      ],
+      "projection": "perspective",
+      "distance": 6.619295379357041,
+      "world_center": [
+        0.0010724067687988281,
+        -0.22333663702011108,
+        1.0447190999984741
+      ]
+    },
+    "Kaitabha": {
+      "yaw": 44.79883726568799,
+      "elevation": 26.83362576654364,
+      "roll": 8.499054354859654,
+      "silhouette_iou": 0.9307048984468339,
+      "pixels_per_unit": 12.321302217036132,
+      "projected_center": [
+        -0.25444528229460817,
+        0.08854618910200363
+      ],
+      "reference_center": [
+        31.5,
+        30.5
+      ]
+    },
+    "Kalki": {
+      "yaw": 54.07684944717707,
+      "elevation": 24.081351433391262,
+      "roll": 4.926482270333756,
+      "silhouette_iou": 0.9106808244846971,
+      "pixels_per_unit": 17.48155392913167,
+      "projected_center": [
+        0.6063944650253581,
+        -0.6532870481759261
+      ],
+      "reference_center": [
+        31.5,
+        30.5
+      ]
+    },
+    "Kama": {
+      "yaw": 49.78520461820929,
+      "elevation": 25.147655518235617,
+      "roll": 4.035566625704776,
+      "silhouette_iou": 0.8654037886340977,
+      "pixels_per_unit": 309.23197026164405,
+      "projected_center": [
+        -0.007145018088559149,
+        0.0006536289664679194
+      ],
+      "reference_center": [
+        32.0,
+        31.0
+      ],
+      "projection": "perspective",
+      "distance": 37.971360815501995,
+      "world_center": [
+        0.0,
+        -1.4733206033706665,
+        0.8573836088180542
+      ]
+    },
+    "Kumara": {
+      "yaw": 63.07967250191304,
+      "elevation": 63.98856890338781,
+      "roll": 0.32805859470021126,
+      "silhouette_iou": 0.9466307277628032,
+      "pixels_per_unit": 11.367482915136556,
+      "projected_center": [
+        -1.5376646787065755,
+        0.6740003765537464
+      ],
+      "reference_center": [
+        32.0,
+        32.5
+      ]
+    },
+    "Madhu": {
+      "yaw": 30.4806939412976,
+      "elevation": 16.216704392888786,
+      "roll": 0.07920879966611394,
+      "silhouette_iou": 0.9322301024428684,
+      "pixels_per_unit": 12.297966647599655,
+      "projected_center": [
+        0.3678787903207311,
+        0.19398648995146028
+      ],
+      "reference_center": [
+        32.5,
+        32.0
+      ]
+    },
+    "Mag": {
+      "yaw": 39.51254445871218,
+      "elevation": 13.499363672751828,
+      "roll": 3.1552108386441953,
+      "silhouette_iou": 0.9522102747909199,
+      "pixels_per_unit": 24.423758367081728,
+      "projected_center": [
+        0.13913697595513452,
+        -0.10992029401979408
+      ],
+      "reference_center": [
+        32.0,
+        32.0
+      ]
+    },
+    "Marica": {
+      "yaw": 115.86788927870195,
+      "elevation": 43.688235849395035,
+      "roll": -35.757730011820485,
+      "silhouette_iou": 0.7092731829573935,
+      "pixels_per_unit": 4.584203625906438,
+      "projected_center": [
+        0.9220147206006555,
+        -0.9205985496269019
+      ],
+      "reference_center": [
+        32.0,
+        27.5
+      ]
+    },
+    "Marutah": {
+      "yaw": 66.97774042299153,
+      "elevation": 24.459888113761007,
+      "roll": 0.6749691733388907,
+      "silhouette_iou": 0.9375951293759512,
+      "pixels_per_unit": 14.785904341491234,
+      "projected_center": [
+        1.245110017157535,
+        -1.250518803084262
+      ],
+      "reference_center": [
+        30.0,
+        31.5
+      ]
+    },
+    "Mitra": {
+      "yaw": 90.45586491896782,
+      "elevation": 27.94628711728854,
+      "roll": -3.0351599005131114,
+      "silhouette_iou": 0.9446297531687792,
+      "pixels_per_unit": 12.54461309250265,
+      "projected_center": [
+        -0.9879281066522803,
+        -0.21447345018052255
+      ],
+      "reference_center": [
+        31.0,
+        32.0
+      ]
+    },
+    "Naga": {
+      "yaw": 46.309057360541544,
+      "elevation": 10.907920336062254,
+      "roll": 3.400052432332769,
+      "silhouette_iou": 0.8701657458563536,
+      "pixels_per_unit": 153.4615538677018,
+      "projected_center": [
+        -0.03553251584946539,
+        0.01043769774458881
+      ],
+      "reference_center": [
+        31.5,
+        29.5
+      ],
+      "projection": "perspective",
+      "distance": 18.917090979380628,
+      "world_center": [
+        -5.364418029785156e-07,
+        1.0122406482696533,
+        0.5633008480072021
+      ]
+    },
+    "Namuci": {
+      "yaw": 60.84629730749957,
+      "elevation": 6.258259737899035,
+      "roll": -3.382470751733022,
+      "silhouette_iou": 0.910856134157105,
+      "pixels_per_unit": 15.688015127684054,
+      "projected_center": [
+        -0.07248954673522101,
+        -0.4758506789200202
+      ],
+      "reference_center": [
+        30.0,
+        31.5
+      ]
+    },
+    "Nandin": {
+      "yaw": 19.08892939961443,
+      "elevation": 16.907365438492008,
+      "roll": 7.97436782930242,
+      "silhouette_iou": 0.938987187309335,
+      "pixels_per_unit": 12.341243842966062,
+      "projected_center": [
+        1.5657466228609598,
+        1.499560716470467
+      ],
+      "reference_center": [
+        34.0,
+        31.5
+      ]
+    },
+    "Naraka": {
+      "yaw": 50.569182862369615,
+      "elevation": 12.920277897385901,
+      "roll": -0.6762744991493053,
+      "silhouette_iou": 0.9669282511210763,
+      "pixels_per_unit": 15.609425590492865,
+      "projected_center": [
+        -0.13194201544165862,
+        -0.8678050456900449
+      ],
+      "reference_center": [
+        33.0,
+        31.0
+      ]
+    },
+    "Nidra": {
+      "yaw": 30.821151461143753,
+      "elevation": 9.149000334696122,
+      "roll": -0.25655749434731767,
+      "silhouette_iou": 0.9499527856468366,
+      "pixels_per_unit": 169.28907570275567,
+      "projected_center": [
+        -0.033914934768132066,
+        0.026181045034529338
+      ],
+      "reference_center": [
+        28.0,
+        31.5
+      ],
+      "projection": "perspective",
+      "distance": 17.720110912599967,
+      "world_center": [
+        0.0,
+        -0.7611883878707886,
+        1.7557120323181152
+      ]
+    },
+    "Pushan": {
+      "yaw": 24.760905010580633,
+      "elevation": 9.120525403628363,
+      "roll": 1.0759172260503478,
+      "silhouette_iou": 0.9411764705882353,
+      "pixels_per_unit": 8.237686620585437,
+      "projected_center": [
+        0.7893178588984691,
+        -0.0360727994362704
+      ],
+      "reference_center": [
+        31.5,
+        33.0
+      ]
+    },
+    "Rati": {
+      "yaw": 39.83214195704244,
+      "elevation": -2.4827202423174093,
+      "roll": -14.7167939989478,
+      "silhouette_iou": 0.5917366946778712,
+      "pixels_per_unit": 76.50387525361884,
+      "projected_center": [
+        -0.1419049144811651,
+        -0.0385650846417992
+      ],
+      "reference_center": [
+        31.0,
+        33.5
+      ],
+      "projection": "perspective",
+      "distance": 9.76396143782608,
+      "world_center": [
+        5.960464477539063e-08,
+        2.408628225326538,
+        -0.5727717876434326
+      ]
+    },
+    "Ravana": {
+      "yaw": 26.30311457770443,
+      "elevation": 2.614970667947844,
+      "roll": 3.1276051544569583,
+      "silhouette_iou": 0.8645552560646901,
+      "pixels_per_unit": 15.389027832383002,
+      "projected_center": [
+        0.16230013175762292,
+        -0.4166156679343034
+      ],
+      "reference_center": [
+        32.0,
+        31.0
+      ]
+    },
+    "Ribhava": {
+      "yaw": 17.493495211022378,
+      "elevation": -22.751273160354717,
+      "roll": -0.3532912160265276,
+      "silhouette_iou": 0.9550084889643463,
+      "pixels_per_unit": 8.775628906198406,
+      "projected_center": [
+        1.6428855094884538,
+        -0.6108505306915772
+      ],
+      "reference_center": [
+        32.5,
+        31.5
+      ]
+    },
+    "Rudra": {
+      "yaw": 47.935068512039074,
+      "elevation": 28.49671650745381,
+      "roll": 4.128300925234076,
+      "silhouette_iou": 0.9336697909156453,
+      "pixels_per_unit": 16.249149046047542,
+      "projected_center": [
+        1.2514529499141611,
+        -1.2774616722196341
+      ],
+      "reference_center": [
+        31.5,
+        31.5
+      ]
+    },
+    "Rukmin": {
+      "yaw": 23.03222547268824,
+      "elevation": 9.429263687756922,
+      "roll": -0.21736739294948926,
+      "silhouette_iou": 0.9064406779661017,
+      "pixels_per_unit": 183.75335698168357,
+      "projected_center": [
+        -0.0376638934063317,
+        0.0036013250753596654
+      ],
+      "reference_center": [
+        27.0,
+        32.0
+      ],
+      "projection": "perspective",
+      "distance": 15.664435793487966,
+      "world_center": [
+        0.0,
+        -0.23559194803237915,
+        1.086760938167572
+      ]
+    },
+    "Sato": {
+      "yaw": 53.28122833638253,
+      "elevation": 5.074414099218993,
+      "roll": -5.871365769311117,
+      "silhouette_iou": 0.8133230054221534,
+      "pixels_per_unit": 252.40218888531405,
+      "projected_center": [
+        -0.01548718764959739,
+        0.01142453877795415
+      ],
+      "reference_center": [
+        31.5,
+        32.0
+      ],
+      "projection": "perspective",
+      "distance": 22.10254759730548,
+      "world_center": [
+        1.6689300537109375e-06,
+        1.2096613645553589,
+        0.9158079922199249
+      ]
+    },
+    "Savitri": {
+      "yaw": 31.717764500005813,
+      "elevation": -15.787527078064656,
+      "roll": 0.2369173338108399,
+      "silhouette_iou": 0.8502304147465438,
+      "pixels_per_unit": 67.26787476851521,
+      "projected_center": [
+        -0.10000992926224771,
+        0.0810877623596852
+      ],
+      "reference_center": [
+        27.5,
+        32.5
+      ],
+      "projection": "perspective",
+      "distance": 7.616211151703591,
+      "world_center": [
+        -2.384185791015625e-07,
+        -0.45454055070877075,
+        -0.1825035810470581
+      ]
+    },
+    "Sita": {
+      "yaw": 24.02244582822428,
+      "elevation": 31.843017412718524,
+      "roll": -5.989076422266196,
+      "silhouette_iou": 0.9160393746381007,
+      "pixels_per_unit": 15.63542913812059,
+      "projected_center": [
+        0.2895053124552829,
+        -0.5447168497119375
+      ],
+      "reference_center": [
+        32.0,
+        29.0
+      ]
+    },
+    "Soma": {
+      "yaw": -118.8287959531095,
+      "elevation": -0.5750022441458604,
+      "roll": 29.795445888203716,
+      "silhouette_iou": 0.946284691136974,
+      "pixels_per_unit": 8.843178326074895,
+      "projected_center": [
+        -0.13607317012808062,
+        1.4229371152597765
+      ],
+      "reference_center": [
+        31.5,
+        31.0
+      ]
+    },
+    "Sumba": {
+      "yaw": 54.027828986469125,
+      "elevation": 16.9278083178583,
+      "roll": 2.4704099835491062,
+      "silhouette_iou": 0.9221284879948086,
+      "pixels_per_unit": 93.64452505414515,
+      "projected_center": [
+        -0.061462534742428604,
+        -0.04569474073327143
+      ],
+      "reference_center": [
+        32.5,
+        30.5
+      ],
+      "projection": "perspective",
+      "distance": 7.114476157652019,
+      "world_center": [
+        0.0,
+        0.4337233901023865,
+        0.13028371334075928
+      ]
+    },
+    "Surya": {
+      "yaw": 39.59935717333977,
+      "elevation": 17.189705742256074,
+      "roll": 9.171629490906419,
+      "silhouette_iou": 0.9128048780487805,
+      "pixels_per_unit": 12.767804711712957,
+      "projected_center": [
+        0.029158991232729026,
+        0.13625240633635516
+      ],
+      "reference_center": [
+        32.0,
+        33.0
+      ]
+    },
+    "Tapas": {
+      "yaw": 14.888121492139213,
+      "elevation": -3.8163294347119994,
+      "roll": -19.400954789957293,
+      "silhouette_iou": 0.912043301759134,
+      "pixels_per_unit": 7.352463835927259,
+      "projected_center": [
+        0.04863065488155904,
+        0.9839359146032625
+      ],
+      "reference_center": [
+        30.5,
+        31.5
+      ]
+    },
+    "Ushasu": {
+      "yaw": 12.785070030967702,
+      "elevation": -12.34643507736073,
+      "roll": -0.3986872570349398,
+      "silhouette_iou": 0.920997920997921,
+      "pixels_per_unit": 15.221593600415332,
+      "projected_center": [
+        0.32639181956499635,
+        -0.0739405458996426
+      ],
+      "reference_center": [
+        37.0,
+        31.5
+      ]
+    },
+    "Varaha": {
+      "yaw": 112.30361593033017,
+      "elevation": 9.935255421796775,
+      "roll": -1.6614720556332911,
+      "silhouette_iou": 0.9427284427284427,
+      "pixels_per_unit": 8.358032049250037,
+      "projected_center": [
+        0.611743615781849,
+        1.4205711139529165
+      ],
+      "reference_center": [
+        32.0,
+        31.5
+      ],
+      "framing_padding": 1.1
+    },
+    "Varuna": {
+      "yaw": 63.95536726821399,
+      "elevation": 11.092717764286176,
+      "roll": -0.9712792970592572,
+      "silhouette_iou": 0.9514415781487102,
+      "pixels_per_unit": 20.8120698960498,
+      "projected_center": [
+        -0.05449020786580572,
+        -0.43986804778660343
+      ],
+      "reference_center": [
+        31.0,
+        31.5
+      ]
+    },
+    "Vayu": {
+      "yaw": -126.28743982735797,
+      "elevation": -13.765717875889887,
+      "roll": 7.030463863435536,
+      "silhouette_iou": 0.927652733118971,
+      "pixels_per_unit": 14.20866745560071,
+      "projected_center": [
+        0.2674887532717821,
+        -0.396841998869056
+      ],
+      "reference_center": [
+        32.0,
+        33.0
+      ]
+    },
+    "Vritra": {
+      "yaw": 46.71212320382455,
+      "elevation": 5.612444178338347,
+      "roll": -3.014011101586549,
+      "silhouette_iou": 0.954359274429491,
+      "pixels_per_unit": 21.906194207224104,
+      "projected_center": [
+        -0.09098526041100657,
+        -0.6876438232057055
+      ],
+      "reference_center": [
+        29.0,
+        31.5
+      ]
+    },
+    "Yaksa": {
+      "yaw": -172.25094118950818,
+      "elevation": 17.249041395388662,
+      "roll": 0.22050174072682682,
+      "silhouette_iou": 0.9595079446437724,
+      "pixels_per_unit": 15.310612623686069,
+      "projected_center": [
+        0.6473517481500562,
+        -0.14254284346723034
+      ],
+      "reference_center": [
+        33.5,
+        31.5
+      ]
+    }
+  },
+  "alignment_notes": {
+    "approximate_camera_fit": true,
+    "reference_resolution": [
+      64,
+      64
+    ],
+    "remaining_silhouette_differences": [
+      "Agastya",
+      "Garuda",
+      "Marica",
+      "Rati"
+    ],
+    "note": "轮廓匹配用于辅助调整相机；不能单凭评分判定姿态或资源版本。以下项仍有可见差异，未宣称完全一致。"
+  },
+  "png_sha256": {
+    "Agastya.png": "2d6bcfa38b3c815e3b8be6c45f1ccab07b0ee737bc98ea1b6f00312c6ee0c807",
+    "Andhaka.png": "2ce7fd4aab72e34a532d68fd4c94aa34dca2926245723166f946b611745af932",
+    "Apsaras.png": "fd98fad8257021e00e8ce06e0900621b7c6fd2cd0a0eb227324a686614da8860",
+    "Ashvinau.png": "30fff7d62b015097e82a5105e2e09d00c67c5a64b893b0b80c29c37f64ff8a02",
+    "Bana.png": "d74365194e1817d96ce1fe3d6426fa5f32ad98efddd30f1be657b5f458dacb9f",
+    "Bhima.png": "6a6b5294dc1b846a2f7f16b8696ccca869e20d62e21437b0f05b2825d6663292",
+    "Bhirava.png": "078b23bfdfced5e55c78abb626dd39e0b722b4305fb951ab320fcca42c631480",
+    "Deva.png": "89da3fa9d2c9f4f07b9d1878520b59e2f42d70612751f37e08232d9bb15da1ff",
+    "Diwari.png": "2c1e2ac5c69fd7aa68e7ca4c1d0b9ea11ec5f0a07f8a24fe92c95003fdf4213b",
+    "Durga.png": "f657609e4c8b4da7b8bfa8a071e03226c838a2d0734824cf65329d5fae57cb3f",
+    "Garuda.png": "9d3e00554b25724daddacc5910a27e6043f9154b11c4be53cb6a12fe1e3f8bc2",
+    "Ila.png": "5865383d1bde765a5475d5a8f1fa1e2ad53e11d49e2ab9fa5b94c3cd2fa3a82c",
+    "Kabanda.png": "ca9b46086c34e6b1d9f15bc7bfcc6fd71b3f8e7ce7aa6ebac298978473dcfd1c",
+    "Kaitabha.png": "39b68b15800b7c518154275067e8352cea4985f29f712b6cf984b163a85117b7",
+    "Kalki.png": "7b8823360378ecb37a707bacd4d9548a5a3b419a8877d73918dace0e7de40856",
+    "Kama.png": "eb3e54c6204e3d15d16985c9fddf1855786f3b36134e2afcd84f16337eb75502",
+    "Kumara.png": "8f9131e2cb67e128880b5ad85fc7edfcc4c35cf771bbefbdeab73d626ff7738d",
+    "Madhu.png": "7ffddb473c4b2252762a6a9eb8717c4073254290591bad664ab418c2feb54788",
+    "Mag.png": "4f02214c3993e46bc100d5de409f4fd27371f4a87d1365ffd21a77a10743c3b9",
+    "Marica.png": "81f20e5d560279384700fc5763237e0d0398ec3830232ab38c2030e876dfe39b",
+    "Marutah.png": "691e95d3c7e7518f86527de4f2c434106637fcaa51db7b0cf22b78f36fd8f67f",
+    "Mitra.png": "b655aa716ca6f65716168eeaa70e9bc1c9d5ddd7efa7d42d5fc8f7a5c54b5e29",
+    "Naga.png": "e89f235519607a872ba76afe25cefb622da1a71f3870b1c4ad82cf71823c777c",
+    "Namuci.png": "6dfcbbc3113c675dc87fc0448fb2b7e32b514d1e703eb76a024a4caa31224451",
+    "Nandin.png": "4564aaf1c63adea9f42a2555d1d73dd948b3988b7ad234a285b719758bf0b750",
+    "Naraka.png": "88b777c0191d677374253ab56662b48828c8a8cbaf1ed2004125f1f6d8744ce4",
+    "Nidra.png": "bb62e850bb6252334a73f8476851ae8f4bdf94e37446f5c9b62916e42f557543",
+    "Pushan.png": "fb69d2b68fde4e6ae1dcacf937026046ff26cbd890b1dad937eff62865253ddb",
+    "Rati.png": "b2405124cac56d6b9288d85507fbec0fafe55dc75729066282b699518d8b9ce3",
+    "Ravana.png": "d31626853bf7e4f79be236f378c3d754fab95cc45e27a83f54771a06c12a7a02",
+    "Ribhava.png": "efea317cd128f8dca8dbdb9b158134476d42b28e554f6e75c6cb4b925f554689",
+    "Rudra.png": "3947f4a5d3452206cdeb083a50441aa94806cccb92748ba37d3009fbd8635b57",
+    "Rukmin.png": "df5b6f91338566f44c82523555f3d6a00bd615afe2a1d69818abed06e968ef52",
+    "Sato.png": "540db47a9bdf710e05762b4422eb1355612ba0338d2e9dc2eccb6523ebb09c27",
+    "Savitri.png": "aefeb1086709818e432a9c7887abfc700ad365d57cc3c8a066955c93e2c72581",
+    "Sita.png": "694768af8df06c799eeaef92398a63958b3c824c1307c1000d0d401f14802ab3",
+    "Soma.png": "0fdd6327ac7c52ec72258b4829d61383315e367c997b756f25d4ad9f9f5fa50e",
+    "Sumba.png": "ac92015e7f1fe406a476dd0069014566a4ee87f47cdda02c884d3c1f5618b969",
+    "Surya.png": "fa9e8b506ea4c18f4f2bb9b4bf635382567907b618ca61a492cc212710c0637b",
+    "Tapas.png": "8bb2740f94bdac13aac5a6bc529212fdf582081fbd1062409f9c3394a39b8800",
+    "Ushasu.png": "7eaf968a7ac59b8f3c01f5be431e5b0ce36f9882968d5c6b5ee90413d42823e8",
+    "Varaha.png": "0f9ebc34e11d63671f45df68c73105f54e8fc30c40335a8e2759c441c91938a6",
+    "Varuna.png": "1da486287b5420218139825a0500026f2314c553c8b6c95f28e555067e046396",
+    "Vayu.png": "f182cea551d723917e1162f7c9c984bc72db92509cc69a8c65423a58bf6b273b",
+    "Vritra.png": "c43a36fe0bde57c5003daf4b5b438310db545b52e6eee11ebb522d885409441e",
+    "Yaksa.png": "6e4b04e3587602eadafe0cb9ae0a4d7fc3d382acf337ed839b8617a7c63207f1"
+  },
+  "webp_sha256": {
+    "Agastya.webp": "b6d16db8e128fbb1423e23d48074e8c8d99d4f60c45331a29127b877f517feab",
+    "Andhaka.webp": "b23f131a98cfdece6312042387747fbbe6f3dfdaf23e4167e201883f972b1209",
+    "Apsaras.webp": "a4e2ab3ecaf8d836faee899da056d7e232d882105305fed707f840f55241be02",
+    "Ashvinau.webp": "486d4915588de823e1c108e566502235567a52c6331bf8150af50d77b6a7d76a",
+    "Bana.webp": "5017f75b1d68cade6a4b602b0cd97d80716587e4988a7507b47f161e22ad0280",
+    "Bhima.webp": "1cb52d2ba91e79a259e56b7aa9fbf5faa90bff97d4455212333d09562fc02494",
+    "Bhirava.webp": "fb1680938931943dd91d1cc234e127cdc78879e56ad41ff7fff253924c87ab03",
+    "Deva.webp": "c94c747476b674cb139ba9b7e971def968ebc405ce42d8669f5d17c6b2d23c8d",
+    "Diwari.webp": "7b6f21e60c1125abdba7918006b3ba74cc7749a43d1478feb728968338ca8862",
+    "Durga.webp": "d101e64b4d788fcab4351ebc89bcda131efe91bc4e1d1fb14b4c05364fe90561",
+    "Garuda.webp": "e7d3579e50814be302b4e93755c80559b72b5b726265265bee97fbe6c79a8696",
+    "Ila.webp": "f637c1365b6df9e2a5e2d46f41f9e695906ba50ccabd59d398424ee96ef9ddd9",
+    "Kabanda.webp": "4816d1d512fbc66606968d97b1069d4c78076990cae3ee68448a3561cd309bf9",
+    "Kaitabha.webp": "85944f0942c12966508620ffab1a1b9f68ccc3dfd6827b93fbf737a80ad601ef",
+    "Kalki.webp": "fb8fcb29d22c7f31f89eb0d0b104c58084c8b82ec88e888978006c5d16e51b5a",
+    "Kama.webp": "64bd3aa4ff34426b0c402b22f62dee355ac9bc5dfda2bc6c5aa4e04961c5c3e6",
+    "Kumara.webp": "fbb7da44346400c2eb1c1d6ae40c152426958b0b770ad190bb34ab6e5db2f6bf",
+    "Madhu.webp": "15b4fa00f6118dbf9f586a50f27ea89aef2d6367c767f84502ba4de50986b9af",
+    "Mag.webp": "1793673640de1dbe37aa9af281154a523e9ababa2e0b4c0c8d5de8bef1077c62",
+    "Marica.webp": "5fa31db362567c694a81411fcb4f3e00516c988e5c55d9448c9274488062b1d6",
+    "Marutah.webp": "83ab3d1b10993453fe64aa8f3a2176d7ff0cd15758935dbd0d8fe4260f7eb37b",
+    "Mitra.webp": "cfda5c69ffb334a7b24d85e793de64009bdf104a70ef6b1ed901bfe6c7131d3d",
+    "Naga.webp": "686579f8c3d9e3e4da9d53112bb359744b4944537576c330bf31999c34930221",
+    "Namuci.webp": "626a43932773710c4a10e757c3ac8fc191af1bc377a4fc604eaa82a307ff680a",
+    "Nandin.webp": "38686d2e0ff4cd0cfe5635ea819cf27e713f3d1d7cff08d2bfc429b17d1ac4e3",
+    "Naraka.webp": "a944001f40366c399110d8f4a99dc95097e659f3daa324cc395dce3b1733a28a",
+    "Nidra.webp": "573be603af12cea62e5c6f2bb584daae9e0356aef7c876815817c82db7e92cca",
+    "Pushan.webp": "79ee4598b008d729ad96f9f93c10d9088bd0ab0af1fd2f8daa5ec89e809bfc97",
+    "Rati.webp": "ce802bb319d29e3428c5f8ae6bdef7fee3fa51d5efd5f2b82814ddcbe9812efe",
+    "Ravana.webp": "30e536a759e3a791081b362de0379f60e2c68b4f3112d8e806dda284a919351f",
+    "Ribhava.webp": "0752340ab96d880c4b349a7d6d4edeae2fd027ebc9d5489b9fc2a3d57b361cd3",
+    "Rudra.webp": "2842f023d1eb66af08cdb4f05c6afe76a24a6a95121aa44fa11dc69cc579391a",
+    "Rukmin.webp": "82c621632a76c84c8d12bfa2adcfa081fa3798345f7f714272f117f92b813108",
+    "Sato.webp": "f410649c892d6eba2ad9bda0e31e737c339071a701bc56b0edb34c95cc42e890",
+    "Savitri.webp": "06592e6cf4c0ce29043c4798dcb0657a85fa1cf627a0d0fd5b49148d16934303",
+    "Sita.webp": "e6cb48176cbc8b87542986a0def9cb488189237951e635c3a870333b243732af",
+    "Soma.webp": "4e45b3777aab1e69a62899496678fc742a45a91eb76148e98a73aa1d97d39aa2",
+    "Sumba.webp": "a706ea1efe6b2673128bcd0ca0dfcd6a199d5c189e56269fc23ee9f4e73e93a2",
+    "Surya.webp": "42aca341a5e4e653be58ebc407513b696128a038edbbfb32084ec68b6439c4ed",
+    "Tapas.webp": "d0f4e18998106051b5415abd70ddbed43c2ebf8b601287409328ffa1adb6c611",
+    "Ushasu.webp": "8972bb6d2d4b8ba002e14084a92dfd4a35ae81056e730ef1d0f722b3370c7b34",
+    "Varaha.webp": "2ea705515ac66f2a1cfed15b0b9c8bcd409665ca8dab6c9a3539a00d136f76d8",
+    "Varuna.webp": "34e719ebc8703c771c4254828cc25f0b8811dc536d3100bd0784655b91e4a02a",
+    "Vayu.webp": "64979a4775451b1a76df58d78f241a1d04cf3bdcb49a3086b410374dc1407477",
+    "Vritra.webp": "3a1b78024b389f1c4b30605812cc0fa37b7bc4dd7f06283d49b33dcc0f5f0f5a",
+    "Yaksa.webp": "6232d22e94e4408f5e0ebf271e9da8d002084696e5914b8a758b6ee74d16c5ba"
+  }
+}
