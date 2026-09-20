@@ -665,6 +665,8 @@
         }
 
         .mag-sim-feed__cells {
+            max-width: 100%;
+            min-width: 0;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -672,6 +674,8 @@
         }
 
         .mag-sim-feed__cells select {
+            min-width: 0;
+            flex: 1;
             padding: 6px 9px;
             font: inherit;
             font-size: 12.5px;
@@ -1203,6 +1207,16 @@
         }
 
         @media (max-width: 719px) {
+            .mag-sim-page .mag-sim-feed__row {
+                grid-template-columns: minmax(0, 1fr) 4.5rem;
+            }
+
+            .mag-sim-page .mag-sim-feed__btn {
+                min-width: 0;
+                white-space: normal;
+                overflow-wrap: anywhere;
+            }
+
             .mag-sim-page {
                 height: auto;
                 min-height: 100vh;

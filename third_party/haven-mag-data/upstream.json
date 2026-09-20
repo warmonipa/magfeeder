@@ -1,0 +1,16 @@
+{
+  "repository": "https://github.com/ephinea4haven/ephinea4haven.github.io",
+  "observedMasterCommit": "437e5d495cb64237e769316be486c05c83b846eb",
+  "sources": {
+    "assets/js/mag-evolution.js": "https://raw.githubusercontent.com/ephinea4haven/ephinea4haven.github.io/437e5d495cb64237e769316be486c05c83b846eb/assets/js/mag-evolution.js",
+    "assets/js/mag-sim-data.js": "https://raw.githubusercontent.com/ephinea4haven/ephinea4haven.github.io/437e5d495cb64237e769316be486c05c83b846eb/assets/js/mag-sim-data.js"
+  },
+  "sourceSha256": {
+    "assets/js/mag-evolution.js": "0395f89add21b7f267051c2d320c6a6c986cd1be05aa9d352849ea1e9ae019b4",
+    "assets/js/mag-sim-data.js": "34293d0189dac71a37a47ae0feae2adc30d066c414a4c7dff4c48b554cf2eefb"
+  },
+  "generatedSha256": {
+    "assets/js/mag-evolution.js": "ab4924f76452734318225b52f7e8a52381f8090134d9a8017b8917ff316ca993",
+    "assets/js/mag-sim-data.js": "99612855589f039346bb3fc6d7e3185b36953d4298ba15de6f126b10e1b162d8"
+  }
+}

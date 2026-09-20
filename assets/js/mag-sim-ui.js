@@ -4,8 +4,15 @@
 // engine; this file only renders `state` and feeds events back into it.
 import * as E from './mag-sim-engine.js';
 import { planMag } from './mag-sim-planner.js';
+import { ITEM_NAMES } from './items_i18n.js';
 
 const DATA = window.MAG_SIM;
+
+function itemLabel(name) {
+    const zh = ITEM_NAMES[name];
+    if (!zh) throw new Error(`Missing authoritative item name: ${name}`);
+    return zh === name ? name : `${zh}（${name}）`;
+}
 
 let state = E.createState(DATA, { start: { mode: 'fresh' } });
 const history = []; // undo snapshot stack (Tasks 12-15)
@@ -114,7 +121,7 @@ function speciesOptionsHtml() {
         .sort((a, b) => Number(a) - Number(b))
         .map((stage) => {
             const opts = byStage[stage].sort()
-                .map((id) => `<option value="${id}">${id}</option>`).join('');
+                .map((id) => `<option value="${esc(id)}">${esc(itemLabel(id))}</option>`).join('');
             return `<optgroup label="${STAGE_LABEL[stage] || `阶段 ${stage}`}">${opts}</optgroup>`;
         }).join('');
 }
@@ -427,12 +434,12 @@ function sectionChipHtml(id) {
 
 function planStepHtml(seg, i) {
     const feedsHtml = seg.feeds
-        .map((f) => `<li>${esc(f.item)} ×${f.count}</li>`).join('');
+        .map((f) => `<li>${esc(itemLabel(f.item))} ×${f.count}</li>`).join('');
     const bankHtml = seg.banks
         ? `<div class="mag-plan-step__bank">存银行 ×${seg.banks}</div>` : '';
     const evolutionHtml = seg.viaCell
-        ? `${esc(seg.magFrom)} → 使用 Cell <b>${esc(seg.viaCell)}</b> → <b>${esc(seg.magTo)}</b>（Lv ${seg.evoLevel}）`
-        : `${esc(seg.magFrom)} → 进化到 <b>${esc(seg.magTo)}</b>（Lv ${seg.evoLevel}）`;
+        ? `${esc(itemLabel(seg.magFrom))} → 使用 Cell <b>${esc(itemLabel(seg.viaCell))}</b> → <b>${esc(itemLabel(seg.magTo))}</b>（Lv ${seg.evoLevel}）`
+        : `${esc(itemLabel(seg.magFrom))} → 进化到 <b>${esc(itemLabel(seg.magTo))}</b>（Lv ${seg.evoLevel}）`;
     return `<div class="mag-plan-step">
         <div class="mag-plan-step__head">
             <span class="mag-plan-step__no">第 ${i + 1} 段</span>
@@ -585,7 +592,7 @@ function renderPlannerResult(root, outcome, magId) {
         // in full underneath, unchanged.
         const prefix = `此四维无法进化成 ${magId}：`;
         const detail = reason && reason.startsWith(prefix) ? reason.slice(prefix.length) : (reason || '未知原因');
-        box.innerHTML = `<p class="mag-sim-planner__fail">✗ 此四维无法进化成 ${esc(magId)}</p>`
+        box.innerHTML = `<p class="mag-sim-planner__fail">✗ 此四维无法进化成 ${esc(itemLabel(magId))}</p>`
             + `<p class="mag-sim-planner__reason">${esc(detail)}</p>`;
     }
 }
@@ -807,7 +814,7 @@ function evoWarningHtml() {
     const at200 = level === 200 ? '已满级的 ' : '';
     return `<div class="mag-sim-card__warn" data-evo-warn>
         ⚠️ ${at200}三阶 mag 停在进化级（Lv ${level}）上：<b>下一口喂食就会重新判定形态</b>。
-        只用能喂出当前形态（${esc(state.magId)}）的角色喂它，否则它会当场变成别的 mag。
+        只用能喂出当前形态（${esc(itemLabel(state.magId))}）的角色喂它，否则它会当场变成别的 mag。
     </div>`;
 }
 
@@ -817,9 +824,7 @@ function renderCard() {
 
     const info = getMagInfo()[state.magId];
     const meta = window.MAG_EVOLUTION?.meta;
-    const nameHtml = info?.zh
-        ? `${esc(info.zh)}<span class="mag-card__en">${esc(state.magId)}</span>`
-        : esc(state.magId);
+    const nameHtml = `${esc(ITEM_NAMES[state.magId])}<span class="mag-card__en">${esc(state.magId)}</span>`;
     const level = E.magLevel(state);
 
     root.innerHTML = `
@@ -929,7 +934,7 @@ function feedAll() {
 function feedRowHtml(item, counts) {
     const qty = feedQty[item] ?? 1;
     return `<div class="mag-sim-feed__row">
-        <button type="button" class="mag-sim-feed__btn" data-feed-item="${esc(item)}">喂 ${esc(item)}</button>
+        <button type="button" class="mag-sim-feed__btn" data-feed-item="${esc(item)}">喂 ${esc(itemLabel(item))}</button>
         <input type="number" class="mag-sim-feed__qty" data-qty="${esc(item)}" value="${qty}" min="0" step="1">
         <span class="mag-sim-feed__count">已喂 ${counts[item] || 0}</span>
         <span class="mag-sim-feed__cost">${DATA.costs[item].toLocaleString()} meseta</span>
@@ -984,7 +989,7 @@ function cellReqHtml(cellName) {
     return gone + raceLine + targets.map((t) => {
         const raw = ((cell.requires || {})[t] || {}).raw || '—';
         return `<div class="mag-sim-feed__cell-req">
-            <b>→ ${esc(t)}</b><span>${esc(raw)}</span>
+            <b>→ ${esc(itemLabel(t))}</b><span>${esc(raw)}</span>
         </div>`;
     }).join('');
 }
@@ -1031,7 +1036,7 @@ function renderFeed() {
             <div class="mag-sim-feed__cells">
                 <select data-cell-select>
                     ${Object.keys(DATA.magCells).map((c) =>
-                        `<option value="${esc(c)}"${c === selectedCell ? ' selected' : ''}>${esc(c)}${
+                        `<option value="${esc(c)}"${c === selectedCell ? ' selected' : ''}>${esc(itemLabel(c))}${
                             DATA.magCells[c].unobtainable ? '（当前不可获得）' : ''}</option>`).join('')}
                 </select>
                 <button type="button" class="mag-sim-feed__cell-btn" data-feed-cell>喂 Cell</button>
@@ -1084,18 +1089,18 @@ function renderFeed() {
 }
 
 function feedItemLogLine(entry) {
-    return `<div class="mag-sim-log__line mag-sim-log__line--feed">喂食：${esc(entry.item)}</div>`;
+    return `<div class="mag-sim-log__line mag-sim-log__line--feed">喂食：${esc(itemLabel(entry.item))}</div>`;
 }
 
 function feedCellLogLine(entry) {
     const why = entry.ok ? '' : `（未生效：${esc(entry.reason || '未满足条件')}）`;
     return `<div class="mag-sim-log__line ${entry.ok ? 'mag-sim-log__line--ok' : 'mag-sim-log__line--reject'}">
-        <span class="mag-sim-log__mark">${entry.ok ? '✓' : '✗'}</span> 喂食 Cell：${esc(entry.item)}${why}
+        <span class="mag-sim-log__mark">${entry.ok ? '✓' : '✗'}</span> 喂食 Cell：${esc(itemLabel(entry.item))}${why}
     </div>`;
 }
 
 function evolveLogLine(entry) {
-    return `<div class="mag-sim-log__line mag-sim-log__line--evolve">→ 进化：${esc(entry.from)} → <b>${esc(entry.to)}</b>（Lv ${entry.level}）</div>`;
+    return `<div class="mag-sim-log__line mag-sim-log__line--evolve">→ 进化：${esc(itemLabel(entry.from))} → <b>${esc(itemLabel(entry.to))}</b>（Lv ${entry.level}）</div>`;
 }
 
 // A bank is not a feed — its own line, its own styling.
@@ -1166,14 +1171,14 @@ function download(filename, text) {
 // Plain-text rendering of one log entry — mirrors logLineHtml() but without
 // markup, for the text export.
 function logLineText(entry) {
-    if (entry.kind === 'evolve') return `→ 进化：${entry.from} → ${entry.to}（Lv ${entry.level}）`;
+    if (entry.kind === 'evolve') return `→ 进化：${itemLabel(entry.from)} → ${itemLabel(entry.to)}（Lv ${entry.level}）`;
     if (entry.kind === 'bank') return '存银行：小数进度向下取偶';
     if (entry.kind === 'racial') return `规则切换：经典 PSO 种族限制${entry.on ? '开启' : '关闭'}`;
     if (entry.kind === 'feedCell') {
-        return `${entry.ok ? '✓' : '✗'} 喂食 Cell：${entry.item}`
+        return `${entry.ok ? '✓' : '✗'} 喂食 Cell：${itemLabel(entry.item)}`
             + (entry.ok ? '' : `（未生效：${entry.reason || '未满足条件'}）`);
     }
-    return `喂食：${entry.item}`;
+    return `喂食：${itemLabel(entry.item)}`;
 }
 
 // Human-readable dump of the whole session: every log line, then a final
@@ -1185,7 +1190,7 @@ function logToPlainText(log) {
     const summary = [
         '',
         '---- 最终 Mag ----',
-        `种类：${state.magId}`,
+        `种类：${itemLabel(state.magId)}`,
         `等级：Lv ${level} / 200`,
         `DEF ${state.def}｜POW ${state.pow}｜DEX ${state.dex}｜MIND ${state.mind}`,
         `同步率：${state.synchro} / 120`,

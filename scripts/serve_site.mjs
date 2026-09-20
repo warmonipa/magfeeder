@@ -3,7 +3,7 @@ import { readFile, stat } from 'node:fs/promises';
 import path from 'node:path';
 
 const directory = path.resolve(process.argv[2] || '.');
-const port = Number(process.argv[3] || 4173);
+const port = Number(process.argv[3] || 4174);
 const host = '127.0.0.1';
 
 const contentTypes = new Map([
