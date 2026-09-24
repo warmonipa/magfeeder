@@ -97,8 +97,10 @@ data synchronization cannot overwrite the site's current Chinese display names.
 
 The simulator displays the same 46 default Mag portraits as Haven Wiki from
 `assets/img/mag/default/`. These are transparent 900 × 900 WebP renders of the
-original models and textures, with individual chart-reference cameras and no
-player colour modulation. Resource and image hashes, camera parameters and the
-four accepted outline differences are recorded in that directory. Keep the
-accepted portrait set byte-identical between the two projects when updating it.
+original models and textures, with individual chart-reference cameras,
+camera-relative lighting that keeps brightness close to the original textures
+and no player colour modulation. Resource and image hashes, camera and lighting
+parameters and the four accepted outline differences are recorded in that
+directory. Keep the accepted portrait set byte-identical between the two
+projects when updating it.
 The data synchronization command does not update these images.
