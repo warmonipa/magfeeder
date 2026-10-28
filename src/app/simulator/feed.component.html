@@ -1,0 +1,42 @@
+<h2>喂食</h2>
+<div class="mag-sim-feed__list">@for(item of data.itemOrder;track item){<div class="mag-sim-feed__row">
+<button class="mag-sim-feed__btn" [attr.data-feed-item]="item" (click)="session.feed(item,session.quantities()[item])">喂 {{label(item)}}</button>
+<input type="number" class="mag-sim-feed__qty" [attr.data-qty]="item" [attr.aria-label]="label(item)+' 数量'" [ngModel]="session.quantities()[item]" (ngModelChange)="quantity(item,$event)" min="0" step="1">
+<span class="mag-sim-feed__count">已喂 {{session.counts()[item]||0}}</span>
+<span class="mag-sim-feed__cost">{{data.costs[item].toLocaleString()}} meseta</span>
+</div>}</div>
+<div class="mag-sim-feed__actions">
+<button class="mag-sim-feed__all" data-feed-all (click)="session.feedAll()">一键喂食（Feed All）</button>
+<button class="mag-sim-feed__bank" data-bank (click)="session.bank()">存银行</button>
+<label class="mag-sim-feed__bank-auto">
+<input type="checkbox" data-auto-bank [ngModel]="session.autoBank()" (ngModelChange)="session.autoBank.set($event)">
+<span>每次喂食后自动存银行</span>
+</label>
+<div class="mag-sim-feed__cells">
+<select data-cell-select aria-label="Mag Cell" [(ngModel)]="selectedCell">@for(cell of cells;track cell){<option [value]="cell">{{label(cell)}}{{data.magCells[cell].unobtainable?'（当前不可获得）':''}}</option>}</select>
+<button class="mag-sim-feed__cell-btn" data-feed-cell (click)="session.feed(selectedCell,1)">喂 Cell</button>
+</div>
+</div>
+<div class="mag-sim-feed__bank-hint">
+<b>存银行</b>：把 Mag 存入银行（或退出游戏）时，四维的小数进度（百分位）会<b>向下取整到偶数</b>——例如 +5% DEF 只会记作 +4%。每喂一次 Monofluid 就存一次，可以把 DEF 从 15 压到 13（指南的 13/0/0/187 路线）。不影响四维整数、等级、同步率、IQ 与 PB。</div>
+<div class="mag-sim-feed__cell-reqs" data-cell-req>
+@if(cell.unobtainable){<div class="mag-sim-feed__cell-req">
+<b>获取</b>
+<span>wiki 标注「Currently unavailable」：当前无法获得该 cell</span>
+</div>}
+@if(race){<div class="mag-sim-feed__cell-req">
+<b>种族</b>
+<span>经典 PSO：{{race}}{{session.state().racialRestriction?'（已按经典规则启用）':' — Ephinea 已于 2017-01-09 取消，当前不限制'}}</span>
+</div>}
+@for(target of targets;track target){<div class="mag-sim-feed__cell-req">
+<b>→ {{label(target)}}</b>
+<span>{{cell.requires?.[target]?.raw||'—'}}</span>
+</div>}</div>
+<div class="mag-sim-feed__totals">
+<span>总道具数：<b>{{session.totals().items}}</b>
+</span>
+<span>总花费：<b>{{session.totals().cost.toLocaleString()}}</b> meseta</span>
+<span>周期数：<b data-cycles>{{session.totals().cycles}}</b>
+</span>
+<span>预计时间：<b data-eta>{{(session.totals().cycles*3.5).toFixed(1)}}</b> 分钟</span>
+@if(session.totals().banks&&session.totals().cycles>session.totals().unbanked){<span class="mag-sim-feed__bank-cost">存银行重置喂食计时器，多花 {{session.totals().cycles-session.totals().unbanked}} 个周期（不存银行只需 {{session.totals().unbanked}} 个）</span>}</div>

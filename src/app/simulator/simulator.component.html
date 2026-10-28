@@ -1,0 +1,21 @@
+<div class="mag-sim__grid">
+<mag-setup/>
+<mag-card/>
+<mag-feed/>
+<section class="mag-sim__controls" data-sim-controls>
+<div class="mag-sim-controls__row">
+<button class="mag-sim-controls__btn" data-undo [disabled]="!session.canUndo()" (click)="session.undo()">撤销</button>
+<button class="mag-sim-controls__btn" data-reset (click)="session.start(session.state()._start)">重置</button>
+<button class="mag-sim-controls__btn" data-export-json (click)="download(true)">导出 JSON</button>
+<button class="mag-sim-controls__btn" data-export-text (click)="download(false)">导出文本</button>
+<button class="mag-sim-controls__btn mag-sim-controls__btn--accent" data-share (click)="share()">分享链接</button>
+<span role="status" class="mag-sim-controls__status" data-share-status>{{status()}}</span>
+</div>
+</section>
+<section class="mag-sim__log" data-sim-log>
+<h2>历史记录</h2>
+<div class="mag-sim-log__list" data-log-list #logList>
+@for(entry of session.state().log;track $index){<div [class]="'mag-sim-log__line mag-sim-log__line--'+(entry.kind==='feedCell'?(entry.ok?'ok':'reject'):entry.kind)">{{logText(entry)}}</div>}@empty{<div class="mag-sim-log__empty">尚未喂食</div>}
+</div>
+</section>
+</div>

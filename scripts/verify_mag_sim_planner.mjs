@@ -1,7 +1,7 @@
 /* Planner unit tests. Run: node scripts/verify_mag_sim_planner.mjs */
 import { readFileSync } from 'node:fs';
-import { evolutionChains, solveSegment, planMag } from '../assets/js/mag-sim-planner.js';
-import { createState, feedOnce, bankMag, magLevel } from '../assets/js/mag-sim-engine.js';
+import { evolutionChains, solveSegment, planMag } from '../src/app/domain/mag-sim-planner.js';
+import { createState, feedOnce, bankMag, magLevel } from '../src/app/domain/mag-sim-engine.js';
 
 const win = {};
 new Function('window', readFileSync('assets/js/mag-sim-data.js', 'utf8'))(win);

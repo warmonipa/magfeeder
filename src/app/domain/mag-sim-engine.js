@@ -1,4 +1,4 @@
-// assets/js/mag-sim-engine.js
+// src/app/domain/mag-sim-engine.js
 export function magLevel(s) { return s.def + s.pow + s.dex + s.mind; }
 
 export function createState(data, { start }) {
@@ -493,9 +493,3 @@ export function replaySession(data, session) {
     return s;
 }
 
-// browser (non-module) global
-if (typeof window !== 'undefined') {
-    window.MagSimEngine = { magLevel, createState, feedOnce, bankMag, setRacialRestriction,
-        feedCycles, consumesFeed, checkEvolution, checkCellEvolution, evalStage3Rule,
-        exportSession, replaySession };
-}

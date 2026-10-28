@@ -56,6 +56,18 @@ async function resolveRequest(pathname) {
 
 const server = createServer(async (request, response) => {
   const url = new URL(request.url || '/', `http://${host}:${port}`);
+  let decoded;
+  try { decoded = decodeURIComponent(url.pathname); } catch { decoded = '/invalid-url'; }
+  const target = path.resolve(directory, '.' + decoded);
+  if (isInside(target, directory) && !url.pathname.endsWith('/')) {
+    try {
+      if ((await stat(target)).isDirectory()) {
+        response.writeHead(301, { Location: url.pathname + '/' + url.search });
+        response.end();
+        return;
+      }
+    } catch {}
+  }
   let file = await resolveRequest(url.pathname);
   let statusCode = 200;
 

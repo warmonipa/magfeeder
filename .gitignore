@@ -4,3 +4,8 @@ _site/
 test-results/
 playwright-report/
 .DS_Store
+
+.angular/
+dist/
+src/app/generated/
+.site-backup-*/

@@ -1,4 +1,4 @@
-// assets/js/mag-sim-planner.js
+// src/app/domain/mag-sim-planner.js
 //
 // Reverse planner for the Mag simulator: given a target mag id, enumerate the
 // evolution chains (feeder-class/gender/Section-ID + condition, at each
@@ -1173,7 +1173,3 @@ export function planMag(data, target, opts = {}) {
     return nearestFallback(data, T, budget, maxTries, nodeFloor);
 }
 
-// browser (non-module) global — mirrors mag-sim-engine.js's window.MagSimEngine
-if (typeof window !== 'undefined') {
-    window.MagSimPlanner = { evolutionChains, solveSegment, planMag };
-}

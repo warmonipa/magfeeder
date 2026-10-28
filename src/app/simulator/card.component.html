@@ -1,0 +1,30 @@
+<h2>当前 Mag</h2>
+<div class="mag-sim-card__head">
+<img class="mag-sim-card__sprite" [src]="portrait" [alt]="state.magId" [hidden]="failedPortrait()===portrait" (error)="failedPortrait.set(portrait)">
+<div>
+<div class="mag-card__name">{{label(state.magId)}}</div>
+<div class="mag-sim-card__level">Lv {{level(state)}} / 200 · 同步率 {{state.synchro}} / 120 · IQ {{state.iq}} / 200</div>
+</div>
+</div>
+<div class="mag-sim-card__stats">@for(key of stats;track key){<div class="mag-sim-card__stat">
+<span class="mag-sim-card__stat-label">{{key.toUpperCase()}}</span>
+<div class="mag-sim-card__stat-track" role="progressbar" [attr.aria-label]="key.toUpperCase()+' 升级进度'" aria-valuemin="0" aria-valuemax="100" [attr.aria-valuenow]="state.progress[key]">
+<div [class]="'mag-sim-card__stat-fill mag-sim-card__stat-fill--'+key" [style.width.%]="state.progress[key]">
+</div>
+</div>
+<span class="mag-sim-card__stat-value">{{state[key]}}·{{state.progress[key]}}%</span>
+</div>}</div>
+@if(state.pbs.length){<div class="mag-card__pb">
+<span class="mag-card__label">PB {{state.pbs.length}}/3</span>@for(pb of state.pbs;track pb){<span class="mag-card__pb-slot">
+<img class="mag-card__pb-icon" [src]="pbIcon(pb)" alt="" width="20" height="17">
+<b>{{meta.pbNames[pb]}}</b>
+<span class="mag-card__pb-en">{{pb}}</span>
+</span>}</div>}
+<div class="mag-trig">@for(event of events;track event){@if(info.triggers?.[event];as trigger){<div class="mag-trig__row">
+<span>{{event}}</span>
+<span>{{meta.effects[trigger.effect]||trigger.effect}}</span>
+<span>{{trigger.rate}}</span>
+</div>}}</div>
+<div class="mag-sim-card__next">下次进化：<b>{{next}}</b>
+</div>
+@if(stage===3&&level(state)>=50&&level(state)%5===0){<div class="mag-sim-card__warn" data-evo-warn>⚠️ 三阶 mag 停在进化级（Lv {{level(state)}}）上：<b>下一口喂食就会重新判定形态</b>。只用能喂出当前形态（{{label(state.magId)}}）的角色喂它，否则它会当场变成别的 mag。</div>}

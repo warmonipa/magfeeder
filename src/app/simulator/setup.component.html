@@ -1,0 +1,62 @@
+<h2>起始设置</h2>
+<fieldset class="mag-sim-setup__block">
+<legend>起始 Mag</legend>
+<div class="mag-tabs" role="tablist" data-start-tabs>
+<button type="button" class="mag-tab" role="tab" data-mode="fresh" [attr.aria-selected]="mode==='fresh'" (click)="setMode('fresh')">全新 Mag</button>
+<button type="button" class="mag-tab" role="tab" data-mode="custom" [attr.aria-selected]="mode==='custom'" (click)="setMode('custom')">自定义</button>
+</div>
+<div class="mag-sim-setup__custom" data-custom-fields [hidden]="mode!=='custom'">
+<label class="mag-sim-setup__field">种类<select data-custom="magId" [(ngModel)]="custom.magId">@for(id of species;track id){<option [value]="id">{{label(id)}}</option>}</select>
+</label>
+<div class="mag-sim-setup__stats">@for(key of stats;track key){<label>{{key.toUpperCase()}}<input type="number" [attr.data-custom]="key" [(ngModel)]="custom[key]" min="0" max="200" step="1">
+</label>}
+<label>同步率<input type="number" data-custom="synchro" [(ngModel)]="custom.synchro" min="0" max="120">
+</label>
+<label>IQ<input type="number" data-custom="iq" [(ngModel)]="custom.iq" min="0" max="200">
+</label>
+</div>
+<div class="mag-sim-setup__label">已学会的 Photon Blast（最多 3 个）</div>
+<div class="mag-sim-setup__pbs">
+@for(pb of pbs;track pb){<label class="mag-sim-setup__pb" [class.is-on]="custom.pbs.includes(pb)">
+<input type="checkbox" [attr.data-custom-pb]="pb" [checked]="custom.pbs.includes(pb)" [disabled]="custom.pbs.length>=3&&!custom.pbs.includes(pb)" (change)="togglePB(pb,$any($event.target).checked)">
+<span>{{pbNames[pb]}}<em>{{pb}}</em>
+</span>
+</label>}</div>
+<button class="mag-sim-setup__apply" data-apply-custom (click)="apply()">应用自定义设置</button>
+</div>
+</fieldset>
+<fieldset class="mag-sim-setup__block">
+<legend>喂食者</legend>
+<div class="mag-sim-setup__row">
+<div class="mag-sim-setup__field">
+<span>职业</span>
+<div class="mag-choice-picker" data-feeder-class-picker (keydown.escape)="open.set('')" (focusout)="!$any($event.currentTarget).contains($any($event.relatedTarget)) && open.set('')">
+<button class="mag-class-chip" data-picker-trigger [attr.aria-expanded]="open()==='class'" aria-controls="feeder-class-list" (click)="toggleMenu('class',$event)">
+<img [src]="'/assets/img/class/'+feederClass.name+'.png'" alt="" width="24" height="28">
+<span>{{feederClass.name}}</span>
+<span aria-hidden="true">⌄</span>
+</button>
+<div class="mag-choice-picker__menu" [style.top.px]="menuPosition().top" [style.left.px]="menuPosition().left" id="feeder-class-list" [hidden]="open()!=='class'">@for(c of classes;track c.name){<button class="mag-class-chip" [attr.data-class]="c.name" (click)="selectClass(c.name)">
+<img [src]="'/assets/img/class/'+c.name+'.png'" alt="" width="24" height="28">{{c.name}}</button>}</div>
+</div>
+</div>
+<div class="mag-sim-setup__field">
+<span>Section ID</span>
+<div class="mag-choice-picker" data-feeder-section (keydown.escape)="open.set('')" (focusout)="!$any($event.currentTarget).contains($any($event.relatedTarget)) && open.set('')">
+<button class="mag-id-chip" data-picker-trigger [attr.aria-expanded]="open()==='section'" aria-controls="feeder-section-list" (click)="toggleMenu('section',$event)">
+<img [src]="'/assets/img/section/icon/'+session.state().feeder.sectionId+'.png'" alt="" width="16" height="16">{{session.state().feeder.sectionId}} ⌄</button>
+<div class="mag-choice-picker__menu" [style.top.px]="menuPosition().top" [style.left.px]="menuPosition().left" id="feeder-section-list" [hidden]="open()!=='section'">@for(id of sections;track id){<button class="mag-id-chip" [attr.data-id]="id" (click)="session.feeder({sectionId:id});open.set('')">
+<img [src]="'/assets/img/section/icon/'+id+'.png'" alt="" width="16" height="16">{{id}}</button>}</div>
+</div>
+</div>
+<label class="mag-rule-toggle" title="Ephinea 已于 2017-01-09 取消此限制。开启后按经典 PSO 规则模拟。">
+<input type="checkbox" data-racial-restriction [checked]="session.state().racialRestriction" (change)="session.racial($any($event.target).checked)">
+<span class="mag-rule-toggle__switch">
+</span>
+<span>经典规则</span>
+<span class="mag-rule-toggle__state">
+</span>
+</label>
+</div>
+<div class="mag-sim-setup__derived">{{feederClass.name}} · {{session.state().feeder.gender==='M'?'男':'女'}} · {{session.state().feeder.sectionId}}</div>
+</fieldset>

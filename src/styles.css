@@ -1,19 +1,4 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="description" content="PSOBB 玛古模拟器">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>玛古模拟器 | Ephinea PSOBB</title>
-    <link rel="stylesheet" type="text/css" href="./assets/css/unified-style.css">
-    <link rel="stylesheet" type="text/css" href="./assets/css/mag-chart.css">
-    <script src="./assets/js/page-chrome.js"></script>
-    <script src="./assets/js/mag-sim-data.js" defer></script>
-    <script src="./assets/js/mag-evolution.js" defer></script>
-    <script type="module" src="./assets/js/mag-sim-ui.js"></script>
-    <style>
         .mag-sim__grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -1263,38 +1248,8 @@
                 max-height: 240px;
             }
         }
-    </style>
-</head>
-
-<body class="mag-sim-page">
-    <page-chrome title="Mag Feeder" back-href="https://www.psohaven.com/" back-text="← 返回 Haven PSOBB"></page-chrome>
-
-    <div class="content-container">
-
-        <div class="mag-sim__toolbar">
-            <p><a href="https://www.psohaven.com/tools/mag.html">查看玛古进化图谱 ↗</a></p>
-            <div class="mag-tabs" role="tablist" aria-label="模拟器 / 规划器" data-sim-page-tabs>
-                <button type="button" class="mag-tab" role="tab" id="page-tab-sim" aria-controls="page-panel-sim" aria-selected="true">模拟器</button>
-                <button type="button" class="mag-tab" role="tab" id="page-tab-planner" aria-controls="page-panel-planner" aria-selected="false">规划器</button>
-            </div>
-        </div>
-
-        <div id="page-panel-sim" role="tabpanel" aria-labelledby="page-tab-sim">
-            <div class="mag-sim__grid">
-                <section class="mag-sim__setup" data-sim-setup></section>
-                <section class="mag-sim__card" data-sim-card></section>
-                <section class="mag-sim__feed" data-sim-feed></section>
-                <section class="mag-sim__controls" data-sim-controls></section>
-                <section class="mag-sim__log" data-sim-log></section>
-            </div>
-        </div>
-
-        <div id="page-panel-planner" role="tabpanel" aria-labelledby="page-tab-planner" hidden>
-            <section data-planner></section>
-        </div>
-
-    </div>
-
-</body>
-
-</html>
+    
+mag-app { display:block; } .mag-choice-picker__menu { position:fixed; width:11rem; }
+.mag-tab[aria-current="page"] { color:var(--accent); background:var(--accent-10); }
+/* The Angular root owns page spacing; body must not add a second frame. */
+body { margin:0; padding:0; }

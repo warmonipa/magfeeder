@@ -1,0 +1,36 @@
+<h2>规划器</h2>
+<fieldset class="mag-sim-setup__block">
+<legend>目标 Mag</legend>
+<label class="mag-sim-setup__field">种类<select data-planner="magId" [(ngModel)]="target.magId">@for(id of species;track id){<option [value]="id">{{label(id)}}</option>}</select>
+</label>
+<div class="mag-sim-setup__stats">@for(key of stats;track key){<label>{{key.toUpperCase()}}<input type="number" [attr.data-planner]="key" [(ngModel)]="target[key]" min="0" max="200" step="1">
+</label>}</div>
+<button class="mag-sim-setup__apply" data-planner-solve [disabled]="busy()" (click)="solve()">求解</button>
+</fieldset>
+<div class="mag-sim-planner__result" data-planner-result aria-live="polite">
+@if(busy()){<p class="mag-sim-planner__loading">求解中…</p>}
+@if(outcome();as result){
+ @if(result.plan;as plan){
+  @if(plan.approximate&&result.nearest){<div class="mag-sim-planner__warn">⚠️ 未找到精确解，找到的最近可达点 {{result.nearest.def}}/{{result.nearest.pow}}/{{result.nearest.dex}}/{{result.nearest.mind}}（距目标 {{result.nearest.dist}}）</div>}@else{<p class="mag-sim-planner__ok">✅ 低喂食方案</p>}
+  <div class="mag-plan-steps">@for(seg of plan.segments;track $index){<div class="mag-plan-step">
+<div class="mag-plan-step__head">
+<span class="mag-plan-step__no">第 {{$index+1}} 段</span>
+<span class="mag-plan-step__feeder">{{seg.feeder.class}} · {{seg.feeder.gender==='M'?'男':'女'}}</span>
+<span class="mag-id-chip">
+<img [src]="'/assets/img/section/icon/'+seg.feeder.sectionId+'.png'" alt="" width="16" height="16">{{seg.feeder.sectionId}}</span>
+</div>
+  <ul class="mag-plan-step__feeds">@for(feed of seg.feeds;track $index){<li>{{label(feed.item)}} ×{{feed.count}}</li>}</ul>@if(seg.banks){<div class="mag-plan-step__bank">存银行 ×{{seg.banks}}</div>}
+  <div class="mag-plan-step__evo">{{label(seg.magFrom)}} → @if(seg.viaCell){使用 Cell <b>{{label(seg.viaCell)}}</b> → }@else{进化到 }<b>{{label(seg.magTo)}}</b>（Lv {{seg.evoLevel}}）</div>
+</div>}</div>
+  <div class="mag-plan-totals">
+<span>总道具：<b>{{plan.totals.items}}</b>
+</span>
+<span>花费：<b>{{plan.totals.meseta.toLocaleString()}}</b> meseta</span>
+<span>周期：<b>{{plan.totals.cycles}}</b>（≈ {{(plan.totals.cycles*3.5).toFixed(1)}} 分钟）</span>
+<span>存银行：<b>{{plan.totals.banks}}</b> 次</span>
+</div>
+  <div class="mag-plan-actions">
+<button class="mag-sim-setup__apply" data-import-plan (click)="import(plan)">{{plan.approximate?'导入模拟器（最近可达点）':'导入模拟器'}}</button>@if(plan.approximate){<p class="mag-plan-actions__note">将回放到上方最接近目标的可达方案，而非精确目标。</p>}</div>
+ }@else{<p class="mag-sim-planner__fail">未找到满足目标的喂养方案</p>
+<p class="mag-sim-planner__reason">{{result.reason}}</p>}
+}</div>

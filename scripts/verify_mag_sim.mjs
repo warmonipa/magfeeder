@@ -2,7 +2,7 @@
 import { readFileSync } from 'node:fs';
 import { createState, magLevel, feedOnce, bankMag, checkEvolution, checkCellEvolution,
          setRacialRestriction, feedCycles, consumesFeed, exportSession, replaySession }
-    from '../assets/js/mag-sim-engine.js';
+    from '../src/app/domain/mag-sim-engine.js';
 
 const src = readFileSync('assets/js/mag-sim-data.js', 'utf8');
 const win = {};

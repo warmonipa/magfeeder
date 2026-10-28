@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "projects": {
+    "magfeeder": {
+      "projectType": "application",
+      "root": "",
+      "sourceRoot": "src",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "src/main.ts",
+            "server": "src/main.server.ts",
+            "tsConfig": "tsconfig.app.json",
+            "index": "src/index.html",
+            "outputPath": "dist/magfeeder",
+            "outputMode": "static",
+            "outputHashing": "all",
+            "styles": [
+              "assets/css/unified-style.css",
+              "assets/css/mag-chart.css",
+              "src/styles.css"
+            ],
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "assets/img",
+                "output": "assets/img"
+              }
+            ],
+            "budgets": [
+              {
+                "type": "initial",
+                "maximumError": "500kB"
+              },
+              {
+                "type": "anyScript",
+                "maximumError": "350kB"
+              }
+            ]
+          },
+          "configurations": {
+            "production": {},
+            "development": {
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "options": {
+            "buildTarget": "magfeeder:build:development"
+          }
+        }
+      }
+    }
+  }
+}
